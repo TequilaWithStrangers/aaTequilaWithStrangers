@@ -25,6 +25,11 @@ app.get("/log-in", (req, res) => {
   res.render("log-in");
 });
 
+app.get('/events', (req,res)=>{
+  const events = req.body;
+ res.render('events',{ events});
+});
+
 // Define a port and start listening for connections.
 const port = 4000;
 

@@ -3,7 +3,13 @@ const { check, validationResult } = require('express-validator');
 const db = require('../models');
 const { csrfProtection, asyncHandler } = require('./utils');
 const eventsRouter = express.Router();
-const { Event } = require('../models')
+const { Event } = require('../models');
+
+eventsRouter.get('/events', async (res,req) =>{
+    const events =  Event.findAll();
+    res.json({events});
+})
+
 
 eventsRouter.get('/:id(\\d+)', asyncHandler(async(req, res, next) => {
     const id = parseInt(req.params.id);
