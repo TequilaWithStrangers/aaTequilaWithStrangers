@@ -3,14 +3,14 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Events', [
-      {cityId: 1,
+      {cityId: 9,
         date: new Date(),
         time: new Date(),
         venue: "House Of Blue",
         address: "1234 Down St.",
         name: "Crazy Shots",
         description: "Will be nuts",
-        hostId: 1,
+        hostId: 10,
         numOfGuests: 4,
         limit: 25,
         createdAt: new Date(),
