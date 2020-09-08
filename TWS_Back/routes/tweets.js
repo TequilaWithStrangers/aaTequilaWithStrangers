@@ -3,7 +3,8 @@ const { check } = require("express-validator");
 const { handleValidationErrors, asyncHandler } = require("../utils");
 const { requireAuth } = require("../auth");
 const router = express.Router();
-const db = require("../db/models");
+const db = require("../models");
+
 
 const { Tweet, User } = db;
 
