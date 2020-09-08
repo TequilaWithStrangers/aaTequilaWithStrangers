@@ -1,69 +1,49 @@
-
-const express = require('express');
-const morgan = require('morgan');
-const cookieParser = require('cookie-parser');
-const session = require('express-session');
-const router = require('./routes/user');
-const { environment, sessionSecret } = require('./config');
-const indexRoutes = require('./routes');
-const parkRoutes = require('./routes/park');
-const attractionRoutes = require('./routes/attraction');
+const express = require("express");
+const morgan = require("morgan");
+const cors = require("cors");
+const { ValidationError } = require("sequelize");
+const indexRouter = require("./routes/index");
+const tweetsRouter = require("./routes/tweets");
+const usersRouter = require("./routes/users");
+const { environment } = require("./config");
 
 const app = express();
 
-app.set('view engine', 'pug');
-app.use(router);
+app.use(morgan("dev"));
+app.use(express.json());
+app.use(cors({ origin: "http://localhost:4000" }));
 
-app.use(session({
-  secret: sessionSecret,
-  resave: false,
-  saveUninitialized: false,
-}));
-app.use(morgan('dev'));
-app.use(cookieParser(sessionSecret));
-app.use(express.urlencoded({ extended: false }));
-app.use(indexRoutes);
-app.use(parkRoutes);
-app.use(attractionRoutes);
+app.use("/", indexRouter);
+app.use("/tweets", tweetsRouter);
+app.use("/users", usersRouter);
 
 // Catch unhandled requests and forward to error handler.
 app.use((req, res, next) => {
-  const err = new Error('The requested page couldn\'t be found.');
+  const err = new Error("The requested resource couldn't be found.");
+  err.errors = ["The requested resource couldn't be found."];
   err.status = 404;
   next(err);
 });
 
-// Custom error handlers.
+// Error handlers. (must have all four arguments to communicate to Express that
+// this is an error-handling middleware function)
 
-// Error handler to log errors.
+// Process sequelize errors
 app.use((err, req, res, next) => {
-  if (environment === 'production' || environment === 'test') {
-    // TODO Log the error to the database.
-  } else {
-    console.error(err);
+  // check if error is a Sequelize error:
+  if (err instanceof ValidationError) {
+    err.errors = err.errors.map((e) => e.message);
+    err.title = "Sequelize Error";
   }
   next(err);
 });
 
-// Error handler for 404 errors.
-app.use((err, req, res, next) => {
-  if (err.status === 404) {
-    res.status(404);
-    res.render('page-not-found', {
-      title: 'Page Not Found',
-    });
-  } else {
-    next(err);
-  }
-});
-
-// Generic error handler.
 app.use((err, req, res, next) => {
   res.status(err.status || 500);
-  const isProduction = environment === 'production';
-  res.render('error', {
-    title: 'Server Error',
-    message: isProduction ? null : err.message,
+  const isProduction = environment === "production";
+  res.json({
+    title: err.title || "Server Error",
+    errors: err.errors,
     stack: isProduction ? null : err.stack,
   });
 });
