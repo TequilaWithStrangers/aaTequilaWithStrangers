@@ -3,9 +3,16 @@ const morgan = require("morgan");
 const cors = require("cors");
 const { ValidationError } = require("sequelize");
 const indexRouter = require("./routes/index");
+<<<<<<< HEAD
 // const tweetsRouter = require("./routes/tweets");
+=======
+
+>>>>>>> master
 const usersRouter = require("./routes/users");
 const { environment } = require("./config");
+const eventsRouter = require("./routes/Events")
+
+
 
 const app = express();
 
@@ -14,8 +21,14 @@ app.use(express.json());
 app.use(cors({ origin: "http://localhost:4000" }));
 
 app.use("/", indexRouter);
+<<<<<<< HEAD
 // app.use("/tweets", tweetsRouter);
 // app.use("/users", usersRouter);
+=======
+app.use("/users", usersRouter);
+app.use("/events", eventsRouter)
+
+>>>>>>> master
 
 // Catch unhandled requests and forward to error handler.
 app.use((req, res, next) => {

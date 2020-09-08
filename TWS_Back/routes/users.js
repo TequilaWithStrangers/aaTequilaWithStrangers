@@ -5,6 +5,10 @@ const { asyncHandler, handleValidationErrors } = require("../utils");
 // const { getUserToken, requireAuth } = require("../auth");
 const router = express.Router();
 const db = require("../models");
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 
 // const { User, Tweet } = db;
 
