@@ -8,6 +8,7 @@ const { environment, sessionSecret } = require('./config');
 const indexRoutes = require('./routes');
 const parkRoutes = require('./routes/park');
 const attractionRoutes = require('./routes/attraction');
+const eventsRouter = require('./routes/events')
 
 const app = express();
 
@@ -23,8 +24,8 @@ app.use(morgan('dev'));
 app.use(cookieParser(sessionSecret));
 app.use(express.urlencoded({ extended: false }));
 app.use(indexRoutes);
-app.use(parkRoutes);
-app.use(attractionRoutes);
+
+app.use('/events', eventsRouter)
 
 // Catch unhandled requests and forward to error handler.
 app.use((req, res, next) => {
