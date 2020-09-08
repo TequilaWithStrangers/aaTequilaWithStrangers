@@ -5,6 +5,7 @@ const { requireAuth } = require("../auth");
 const router = express.Router();
 const db = require("../models");
 
+
 const { Tweet, User } = db;
 
 router.use(requireAuth);
