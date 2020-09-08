@@ -11,7 +11,7 @@ module.exports = {
       cityId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: { model:"Cities" }
+        references: { model: "Cities" }
       },
       date: {
         allowNull: false,
