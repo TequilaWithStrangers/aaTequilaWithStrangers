@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const fetch = require('node-fetch');
 
 // Create the Express app.
 const app = express();
@@ -25,9 +26,10 @@ app.get("/log-in", (req, res) => {
   res.render("log-in");
 });
 
-app.get('/events', (req,res)=>{
-  const events = req.body;
- res.render('events',{ events});
+app.get('/events', async (req,res)=>{
+  let response = await fetch('http://localhost:8080/events');
+  let events = await response.json();
+  res.render('events',{events});
 });
 
 // Define a port and start listening for connections.

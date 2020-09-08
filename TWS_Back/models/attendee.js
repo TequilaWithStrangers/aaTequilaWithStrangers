@@ -6,6 +6,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Attendee.associate = function(models) {
     // associations can be defined here
+    Attendee.belongsTo(models.User, {foriegnKey:'userId'});
+    Attendee.belongsTo(models.Event, {foriegnKey:'eventId'});
   };
   return Attendee;
 };
