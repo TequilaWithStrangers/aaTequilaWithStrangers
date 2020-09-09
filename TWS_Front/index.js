@@ -31,6 +31,10 @@ app.get("/create", (req, res) => {
   res.render("create");
 });
 
+router.get("/sign-up", (req, res) => {
+  res.render("sign-up");
+});
+
 app.get("/log-in", (req, res) => {
   res.render("log-in");
 });

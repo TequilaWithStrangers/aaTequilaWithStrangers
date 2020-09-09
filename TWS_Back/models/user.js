@@ -4,10 +4,10 @@ module.exports = (sequelize, DataTypes) => {
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     email: DataTypes.STRING,
-    password: DataTypes.STRING,
+    hashedPassword: DataTypes.STRING,
     cityId: DataTypes.INTEGER
   }, {});
-  User.associate = function(models) {
+  User.associate = function (models) {
     const ops = {
       foreignKey: "userId",
       otherKey: "eventId",
@@ -17,7 +17,6 @@ module.exports = (sequelize, DataTypes) => {
     User.belongsTo(models.City, { foreignKey: "cityId" })
     User.hasMany(models.Event, { foreignKey: "hostId" })
     //hasMany
-    
 
   };
   return User;
