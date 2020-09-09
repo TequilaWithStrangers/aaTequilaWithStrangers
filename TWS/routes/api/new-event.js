@@ -6,10 +6,7 @@ const { csrfProtection, asyncHandler } = require('../utils/utils');
 
 const router = express.Router();
 
-router.get('/cities', csrfProtection, asyncHandler(async (req, res) => {
-    const cities = await City.findAll({ order: ['name'] });
-    res.json(cities)
-}));
+
 
 router.post('/events', csrfProtection, asyncHandler(async (req, res) => {
     const { cityId,
