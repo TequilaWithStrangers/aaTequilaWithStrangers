@@ -6,7 +6,8 @@ const { ValidationError } = require("sequelize");
 
 
 const { environment } = require("./config");
-const eventsRouter = require("./routes/events")
+const eventsRouter = require("./routes/events");
+const dashboardRouter = require("./routes/dashboard");
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.set('view engine', 'pug');
 
 app.use("/events", eventsRouter);
 app.use('/public', express.static('public'));
+app.use('/dashboard', dashboardRouter);
 
 
 // Catch unhandled requests and forward to error handler.

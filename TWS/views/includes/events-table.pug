@@ -13,12 +13,13 @@ table( class='pure-table')
     tbody
         tr
             each event in events
+                td
+                    a(href=`http://localhost:8080/events/${event.id}`)= event.name
                 td= event.City.name
                 td= event.date
                 td= event.time
                 td= event.venue
                 td= event.address
-                td= event.name
                 td= event.description
                 td= event.hostId
                 td= event.numOfguests
