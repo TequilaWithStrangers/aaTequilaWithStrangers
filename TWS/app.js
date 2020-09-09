@@ -2,14 +2,13 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const { ValidationError } = require("sequelize");
-<<<<<<< HEAD:TWS/app.js
 const usersRouter = require("./routes/api/users");
 // const apiRouter = require('./routes/api');
 const pagesRouter = require('./routes/pages');
-=======
-const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
->>>>>>> master:TWS_Back/app.js
+const usersRouter = require("./routes/api/users");
+// const apiRouter = require('./routes/api');
+const pagesRouter = require('./routes/pages');
+
 const { environment } = require("./config");
 const eventsRouter = require("./routes/api/events")
 
