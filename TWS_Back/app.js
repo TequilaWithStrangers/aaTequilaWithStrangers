@@ -24,7 +24,6 @@ app.use("/", indexRouter);
 <<<<<<< HEAD
 // app.use("/tweets", tweetsRouter);
 // app.use("/users", usersRouter);
-=======
 app.use("/users", usersRouter);
 app.use("/events", eventsRouter)
 
