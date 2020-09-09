@@ -5,6 +5,10 @@ const { ValidationError } = require("sequelize");
 const usersRouter = require("./routes/api/users");
 // const apiRouter = require('./routes/api');
 const pagesRouter = require('./routes/pages');
+const usersRouter = require("./routes/api/users");
+// const apiRouter = require('./routes/api');
+const pagesRouter = require('./routes/pages');
+
 const { environment } = require("./config");
 const eventsRouter = require("./routes/api/events")
 

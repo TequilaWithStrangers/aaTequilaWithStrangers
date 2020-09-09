@@ -1,6 +1,7 @@
 const express = require('express');
 const { check, validationResult } = require('express-validator');
 const { Event, City } = require('./models');
+
 const { csrfProtection, asyncHandler } = require('../utils/utils');
 
 const router = express.Router();
