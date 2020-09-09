@@ -5,12 +5,23 @@ const eventsRouter = express.Router();
 const { Event, User, City } = require('../../models')
 
 
+<<<<<<< HEAD:TWS/routes/api/events.js
 eventsRouter.get('/', async (req, res) => {
     const events = await Event.findAll({ include: { model: City } });
     res.json(events);
 })
 
 eventsRouter.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
+=======
+eventsRouter.get('/', async (req,res) =>{
+    const events = await Event.findAll({include:{model:City}});
+    res.json(events);
+})
+
+
+
+eventsRouter.get('/:id(\\d+)', asyncHandler(async(req, res, next) => {
+>>>>>>> master:TWS_Back/routes/events.js
     const id = parseInt(req.params.id);
     const event = await Event.findOne({
         where: { id },
