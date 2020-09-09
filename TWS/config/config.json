@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "teq_app",
+    "password": "teq123",
+    "database": "teq_with_strangers_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "seederStorage": "sequelize"
+  },
+  "test": {
+    "username": "teq_app",
+    "password": "teq123",
+    "database": "teq_with_strangers_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "seederStorage": "sequelize"
+  },
+  "production": {
+    "username": "teq_app",
+    "password": "teq123",
+    "database": "teq_with_strangers_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "seederStorage": "sequelize"
+  }
+}
