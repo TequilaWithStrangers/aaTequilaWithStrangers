@@ -1,9 +1,11 @@
 const express = require("express");
 const path = require("path");
+const fetch = require('node-fetch');
 const asynHandler = (handle) => (req, res, next) => handle(req, res, next).catch(next);
+
 // Create the Express app.
 const app = express();
-const fetch = require('node-fetch');
+
 
 // Set the pug view engine.
 app.set("view engine", "pug");
@@ -37,6 +39,12 @@ router.get("/sign-up", (req, res) => {
 
 app.get("/log-in", (req, res) => {
   res.render("log-in");
+});
+
+app.get('/events', async (req,res)=>{
+  let response = await fetch('http://localhost:8080/events');
+  let events = await response.json();
+  res.render('events',{events});
 });
 
 // Define a port and start listening for connections.
