@@ -3,7 +3,6 @@ const morgan = require("morgan");
 const cors = require("cors");
 const { ValidationError } = require("sequelize");
 const indexRouter = require("./routes/index");
-
 const usersRouter = require("./routes/users");
 const { environment } = require("./config");
 const eventsRouter = require("./routes/Events")
