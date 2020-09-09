@@ -9,7 +9,6 @@ eventsRouter.get('/', async (req, res) => {
     res.json(events);
 })
 
-eventsRouter.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
 eventsRouter.get('/', async (req,res) =>{
     const events = await Event.findAll({include:{model:City}});
     res.json(events);

@@ -2,29 +2,21 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const { ValidationError } = require("sequelize");
-const usersRouter = require("./routes/api/users");
-// const apiRouter = require('./routes/api');
-const pagesRouter = require('./routes/pages');
-const usersRouter = require("./routes/api/users");
-// const apiRouter = require('./routes/api');
-const pagesRouter = require('./routes/pages');
+
+
 
 const { environment } = require("./config");
-const eventsRouter = require("./routes/api/events")
+const eventsRouter = require("./routes/events")
 
 const app = express();
 
 app.use(morgan("dev"));
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:4000" }));
+app.use(cors({ origin: "http://localhost:8080" }));
 app.set('view engine', 'pug');
 
-app.use("/", pagesRouter);
-app.use("/users", usersRouter);
-app.use("/events", eventsRouter)
+app.use("/events", eventsRouter);
 app.use('/public', express.static('public'));
-// app.use('/api', apiRouter);
-app.use('/', pagesRouter);
 
 
 // Catch unhandled requests and forward to error handler.
