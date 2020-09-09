@@ -12,6 +12,8 @@ block content
         label(for='lastName') Last Name
         input#username.form-control(type='text' name='lastName' placeholder="Last Name")
       include includes/auth-form-fields.pug
+      .form-group
+        label(for='cityId') 
       button.btn.btn-primary(type='submit') Sign Up
     a(href='/log-in') Already have an account? Log in here.
   script(src="js/sign-up.js")
