@@ -1,8 +1,9 @@
 const express = require("express");
 const path = require("path");
-
+const asynHandler = (handle) => (req, res, next) => handle(req, res, next).catch(next);
 // Create the Express app.
 const app = express();
+const fetch = require('node-fetch');
 
 // Set the pug view engine.
 app.set("view engine", "pug");
@@ -12,6 +13,15 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("/", (req, res) => {
   res.render("index");
 });
+
+app.get("/events/:id(\\d+)", asynHandler(async (req, res) => {
+  const id = parseInt(req.params.id)
+  const result = await fetch(`http://localhost:8080/events/${id}`)
+  const data = await result.json();
+  console.log(data)
+
+  res.render("event", {data})
+}))
 
 app.get("/profile", (req, res) => {
   res.render("profile");
