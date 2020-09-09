@@ -1,27 +1,12 @@
 const express = require("express");
-// const bcrypt = require("bcryptjs");
+const bcrypt = require("bcryptjs");
 const { check } = require("express-validator");
 const { asyncHandler, handleValidationErrors } = require("../utils");
-// const { getUserToken, requireAuth } = require("../auth");
+const { getUserToken, requireAuth } = require("../auth");
 const router = express.Router();
 const db = require("../models");
-<<<<<<< HEAD
-=======
 
->>>>>>> master
-
-// const { User, Tweet } = db;
-
-// const validateEmailAndPassword = [
-//   check("email")
-//     .exists({ checkFalsy: true })
-//     .isEmail()
-//     .withMessage("Please provide a valid email."),
-//   check("password")
-//     .exists({ checkFalsy: true })
-//     .withMessage("Please provide a password."),
-//   handleValidationErrors,
-// ];
+const { User } = db;
 
 const validateName = [
   check("firstName")
@@ -48,33 +33,22 @@ const validateEmailAndPassword = [
     .withMessage("Please provide a password."),
 ];
 
-// router.post(
-//   "/",
-//   validateName,
-//   validateEmailAndPassword,
-//   handleValidationErrors,
-//   asyncHandler(async (req, res) => {
-//     const { firstName, lastName, email, password, cityId } = req.body;
-//   }))
+router.post(
+  "/",
+  validateName,
+  validateEmailAndPassword,
+  handleValidationErrors,
+  asyncHandler(async (req, res) => {
+    const { firstName, lastName, email, password, cityId } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const user = await User.create({ firstName, lastName, email, hashedPassword, cityId });
 
-// router.post(
-//   "/",
-//   check("username")
-//     .exists({ checkFalsy: true })
-//     .withMessage("Please provide a username"),
-//   validateEmailAndPassword,
-//   asyncHandler(async (req, res) => {
-//     const { username, email, password } = req.body;
-//     const hashedPassword = await bcrypt.hash(password, 10);
-//     const user = await User.create({ username, email, hashedPassword });
-
-//     const token = getUserToken(user);
-//     res.status(201).json({
-//       user: { id: user.id },
-//       token,
-//     });
-//   })
-// );
+    const token = getUserToken(user);
+    res.status(201).json({
+      user: { id: user.id },
+      token,
+    });
+  }));
 
 // router.post(
 //   "/token",
@@ -112,4 +86,4 @@ const validateEmailAndPassword = [
 //   })
 // );
 
-// module.exports = router;
+module.exports = router;
