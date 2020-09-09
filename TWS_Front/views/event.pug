@@ -1,0 +1,18 @@
+DOCTYPE=html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title TWS #{data.event.name}
+    body
+        include nav-bar.pug
+        h1 Event Name: #{data.event.name}
+        div City: #{data.event.City.name}
+        div Host: #{data.host.firstName} #{data.host.lastName}
+        div Date: #{data.event.date}
+        div Venue: #{data.event.venue}
+        div Address: #{data.event.address}
+        div Description: #{data.event.description}
+        div Number Attending #{data.event.numOfGuests}
+        div Guest Limit: #{data.event.limit}     
+

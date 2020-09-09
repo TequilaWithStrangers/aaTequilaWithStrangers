@@ -1,10 +1,9 @@
 const express = require('express');
 const { check, validationResult } = require('express-validator');
-const db = require('../models');
 const { csrfProtection, asyncHandler } = require('./utils');
 const eventsRouter = express.Router();
+const { Event, User, City } = require('../models')
 
-const { Event, City } = require('../models');
 
 eventsRouter.get('/', async (req,res) =>{
     const events = await Event.findAll({include:{model:City}});
@@ -12,11 +11,18 @@ eventsRouter.get('/', async (req,res) =>{
 })
 
 
+
 eventsRouter.get('/:id(\\d+)', asyncHandler(async(req, res, next) => {
     const id = parseInt(req.params.id);
-    const event = await Event.findByPk(id);
-    console.log(req.params.id)
-    res.json(event)
+    const event = await Event.findOne({
+        where: { id },
+        include: { model: City },
+        });
+
+    const host = await User.findByPk(event.hostId)
+    console.log(host)
+    // const host = await User.findByPk(hostId)
+    res.json({event, host}) 
 }));
 
 
