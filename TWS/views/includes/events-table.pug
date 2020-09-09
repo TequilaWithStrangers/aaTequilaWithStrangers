@@ -1,0 +1,25 @@
+table( class='pure-table')
+    thead: tr
+        th city
+        th date
+        th time
+        th venue
+        th address
+        th name
+        th description
+        th host
+        th number of guests
+        th limit
+    tbody
+        tr
+            each event in events
+                td= event.City.name
+                td= event.date
+                td= event.time
+                td= event.venue
+                td= event.address
+                td= event.name
+                td= event.description
+                td= event.hostId
+                td= event.numOfguests
+                td= event.limit
