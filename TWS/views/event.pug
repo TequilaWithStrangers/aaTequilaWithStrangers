@@ -23,7 +23,7 @@ html(lang="en")
                     div(class="event__address") 🗺 #{event.address}
                     div(class="event__date") 📅 #{event.date}
                     div(class="event__limit") #{event.limit - event.numOfGuests} Seats Left
-                    progress(class="progress is-success" value=`${event.limit / event.numOfGuests}` max=event.limit) 60%
+                    progress(class="progress is-success" value=`${event.numOfGuests}` max=event.limit) #{(event.numOfGuests / event.limit) * 100}%
                     div(class="event__na") 🤪 Attending #{event.numOfGuests}
                 form(method="POST" action=`http://localhost:8080/events/${event.id}`)
                     input(id="hidden-form-user-id" type="hidden" name="userId")
@@ -34,9 +34,11 @@ html(lang="en")
                 div(class="event-what-is box")
                     p What is Tequila Time, Exactly?
                     p 🥃
+                    p --------------
                     p Tequila Time is where five-ish strangers sit at a cafe with a Host to have a two hour conversation. It's not about anything in particular.
                     p You're meant to know pretty much nothing about the people that come, aside from the fact that they all signed up for this — just like you. It's self-selecting in that sense.
                     p However, it may bring you comfort to know a little something about your Host. If so, just keep reading
+                    p
                     p 👉
             div(class="event__host-container")
                 div(class="event__name") 

@@ -27,6 +27,9 @@ router.post('/:id(\\d+)', asyncHandler(async(req, res, next) => {
   }catch(err){
     res.render('error', err)
   }  
+  const event = await Event.findByPk(eventId);
+  const num = event.numOfGuests + 1
+  await Event.update({numOfGuests: num})
   res.render('dashboard')
 }))
 

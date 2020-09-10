@@ -38,6 +38,7 @@ body{
     margin-top: 30px;
     font-size: 3rem;
     font-family: 'Bebas Neue', cursive;
+    text-align: center;
 }
 
 .event__host{
@@ -45,6 +46,7 @@ body{
     display: flex;
     justify-content: center;
     font-size: 1.3rem;
+    text-align: center;
 }
 
 /* .event__host-meet{
@@ -74,7 +76,9 @@ body{
 }
 
 .event__join-user{
-    padding: 30px 10px
+    padding: 30px 10px;
+    text-align: center;
+    
 }
 
 .event__details{
@@ -119,6 +123,7 @@ body{
     margin-top: 35px;
     margin-left: 10px;
     width: 90%;
+    text-align: center;
 }
 
 .about{

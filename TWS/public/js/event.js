@@ -1,5 +1,5 @@
 // const {Event, User, City, Attendee} = require('../../models')
-localStorage.setItem('TEQ_CURRENT_USER_ID', 1)
+// localStorage.setItem('TEQ_CURRENT_USER_ID', 1)
 const loggedInUser = localStorage.getItem('TEQ_CURRENT_USER_ID');
 const eventId = event();
 
@@ -13,6 +13,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const passer = document.getElementById('hidden-form-user-id')
     passer.value = loggedInUser;
     // console.log(passer.value)
+    if (loggedInUser) {
+        const siso = document.getElementById('siso');
+        siso.innerHTML = 'Sign Out'
+        const signButton =  document.querySelector('.nav-bar__logout')
+        signButton.setAttribute('href', 'http://localhost:8080/signout')
+    }
 
 })
 
