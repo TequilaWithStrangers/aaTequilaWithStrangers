@@ -1,4 +1,19 @@
-div(class=nav-bar)
-    div dashboard
-    div log-out
-    div all events
+link(rel="stylesheet" href="../public/css/nav-bar.css")
+link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet")
+nav(class="nav-bar")
+
+    div(class="nav-bar__logo") 
+        //- strong(style="color: gold") logo
+        img(class="nav-bar__logo-image" src="../public/images/nav-bar-logo.png")
+    div(class="nav-bar__links")
+        div(class="nav-bar__t-times") 
+            a(href="http://localhost:8080/events" class="") 
+                strong Tequila Times
+        div(class="nav-bar__dashboard")
+            a(href="http://localhost:8080/dashboard" class="") 
+                strong DashBoard
+        div(class="nav-bar__logout")
+            a(href="http://localhost:8080/signout" class="") 
+                strong Sign Out
+
+            //- button is-success is-light is-small is-outlined is-inverted
