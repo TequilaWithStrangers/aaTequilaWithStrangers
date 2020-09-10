@@ -1,0 +1,21 @@
+.footer{
+    display: block;
+    padding: none;
+    height: 50px;
+    margin-top: 50px;
+    background-color: rgb(125, 219, 125);
+}
+
+.footer__div{
+    width:100%;
+    height: 50px;
+    background-color: rgb(125, 219, 125);
+    margin-top: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    padding: none;
+    border: none;
+    align-items: center;
+}

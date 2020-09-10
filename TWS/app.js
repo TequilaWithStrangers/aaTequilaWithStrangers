@@ -2,9 +2,8 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const { ValidationError } = require("sequelize");
-const cookieParser = require("cookie-parser"); 
+const cookieParser = require("cookie-parser");
 const csrf = require('csurf');
-
 
 const { environment } = require("./config");
 const eventsRouter = require("./routes/events");
