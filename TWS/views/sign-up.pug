@@ -1,4 +1,6 @@
-extends layout.pug
+
+mixin option(value, text)
+  option(value=value selected=(value === cityId)) #{text}
 
 block content
   div(class="sign-up-container")
@@ -7,13 +9,17 @@ block content
     form(class="sign-up-form")
       .form-group
         label(for='firstName') First Name
-        input#username.form-control(type='text' name='firstName' placeholder="First Name")
+        input#firstName.form-control(type='text' name='firstName' placeholder="First Name")
       .form-group
         label(for='lastName') Last Name
-        input#username.form-control(type='text' name='lastName' placeholder="Last Name")
+        input#lastName.form-control(type='text' name='lastName' placeholder="Last Name")
       include includes/auth-form-fields.pug
       .form-group
-        label(for='cityId') 
-      button.btn.btn-primary(type='submit') Sign Up
+        label(for='cityId') City
+        select#cityId.form-control(name='cityId')
+          +option('', '--Please choose an option--')
+          +option('1', 'San Diego')
+      div
+        button.btn.btn-primary(type='submit') Sign Up!
     a(href='/log-in') Already have an account? Log in here.
-  script(src="js/sign-up.js")
+  script(src="../public/js/sign-up.js")
