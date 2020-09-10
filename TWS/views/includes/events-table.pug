@@ -1,11 +1,11 @@
 table( class='pure-table')
     thead: tr
+        th name
         th city
         th date
         th time
         th venue
         th address
-        th name
         th description
         th host
         th number of guests
@@ -13,13 +13,25 @@ table( class='pure-table')
     tbody
         tr
             each event in events
+                td
+                    a(href=`http://localhost:8080/events/${event.id}`)= event.name
                 td= event.City.name
                 td= event.date
                 td= event.time
                 td= event.venue
                 td= event.address
-                td= event.name
                 td= event.description
                 td= event.hostId
                 td= event.numOfguests
                 td= event.limit
+    each event in events
+        div(class="event__details box")
+            div(class="event__city") Where? #{event.City.name}
+            div(class="event__venue") 📍 #{event.venue}
+            div(class="event__address") 🗺 #{event.address}
+            div(class="event__date") 📅 #{event.date}
+            div(class="event__limit") #{event.limit - event.numOfGuests} Seats Left
+            progress(class="progress is-success" value=`${event.numOfGuests}` max=event.limit) #{(event.numOfGuests / event.limit) * 100}%
+            div(class="event__na") 🤪 Attending #{event.numOfGuests}
+            div
+                a(href=`http://localhost:8080/events/${event.id}`) check it out

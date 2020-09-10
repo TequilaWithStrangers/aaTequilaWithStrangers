@@ -2,8 +2,24 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css")
         <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="../public/css/events.css">
+        //- script(defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js")
         title Events page
     body
-        h2 Hello These are the currently available events
-        include ./includes/events-table
+        div(class='div-events')
+            include nav-bar.pug
+        div(class='head-parent')
+            div(class='head-card')
+                h2 Good Converstaions
+            div(class='head-card')
+                h3 Are in your future
+        div(class='div-events')
+            h2 Tequilla With Strangers is shots, with strangers.
+        div(class='div-events' id='par')
+            p For two hours, five-ish strangers have a party at a bar(or some other public place)</br> with a host to talk. Not about anything in particular. The circumstances are</br> unusual, but that's the point.If none of these work for you, you can sign up</br> and we'll email you when next month's tea times are all up. You can also</br> apply to be a Host!
+        div(class='div-events')
+            h2 Here are the upcomming Tequilla Times
+        div(class='div-events')
+            include ./includes/events-table

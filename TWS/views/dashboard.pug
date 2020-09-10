@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body
+        div(class='div-events')
+            include nav-bar.pug
+        div(class='div-events')
+            h2 Hello These are the currently available events #{event.userId.firstName}
+        div(class='div-events')
+            include ./includes/events-table

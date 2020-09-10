@@ -1,0 +1,53 @@
+body {
+    background-color:blanchedalmond  ;
+  }
+.div-events{
+    display: grid;
+    justify-content: center;
+    color: rgb(125, 219, 125);
+  }
+#par{
+    position: relative;
+    top:30px;
+
+}
+.head-parent{
+    display:grid;
+    background-image: url("../images/62068797-tequila-shots-with-lime-and-salt-on-the-stone-table-\ \(1\).jpg");
+    opacity: .6 ;
+    margin-left: 100px;
+    margin-right: 100px;
+    height:200px;
+
+  }
+.head-card{
+    font-size: 40px;
+    color: black;
+    display:grid;
+    justify-content: space-around;
+    /* margin-left: 200px;
+    margin-right:200px; */
+  }
+h2{
+    /* color: white; */
+    position: relative;
+    top: 30px;
+    font-size: 38px;
+}
+h3{
+    position: relative;
+    bottom: 20px;
+    font-size: 24px;
+}
+.event__details{
+    position: relative;
+    top:30px;
+    border: 2px solid gray;
+    /* padding: 10px; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: flex-start;
+    /* height: 300px; */
+    width: 200px;
+}

@@ -1,16 +1,17 @@
 const express = require("express");
 const { asyncHandler } = require('./utils/utils');
-const { Event, City, User, Attendee } = require('../models')
 
+const { Attendee, City, Event, User } = require('../models');
 const router = express.Router();
+const { csrfProtection } = require('./utils/utils');
 
 
-router.get('/:id(\\d+)', asyncHandler(async(req, res, next) => {
+router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
   const id = parseInt(req.params.id);
   const event = await Event.findOne({
-      where: { id },
-      include: { model: City },
-});
+    where: { id },
+    include: { model: City },
+  });
   const host = await User.findOne({
     where: { id: event.hostId },
     include: { model: City },
@@ -20,29 +21,44 @@ router.get('/:id(\\d+)', asyncHandler(async(req, res, next) => {
   res.render('event', { event, host })
 }));
 
-router.post('/:id(\\d+)', asyncHandler(async(req, res, next) => {
-  const {userId, eventId} = req.body;
-  try{
-    await Attendee.create({userId, eventId, createdAt: new Date(), updatedAt: new Date()});
-  }catch(err){
+router.post('/:id(\\d+)', asyncHandler(async (req, res, next) => {
+  const { userId, eventId } = req.body;
+  try {
+    await Attendee.create({ userId, eventId, createdAt: new Date(), updatedAt: new Date() });
+  } catch (err) {
     res.render('error', err)
-  }  
+  }
   const event = await Event.findByPk(eventId);
   const num = event.numOfGuests + 1
-  await Event.update({numOfGuests: num})
+  await Event.update({ numOfGuests: num })
   res.render('dashboard')
 }))
 
-router.get('/new', async (req, res) => {
-    const response = await fetch('http://localhost:8080/cities');
-    const cities = response.json();
-    res.render('new-event-form', { cities });
+router.get('/new', csrfProtection, async (req, res) => {
+  const cities = await City.findAll({ order: ['name'] });
+  res.render('new-event-form', { cities, csrfToken: req.csrfToken() });
 })
 
+router.post('/', csrfProtection, asyncHandler(async (req, res) => {
+  //TODO update with current user when auth is complete
+  const hostId = 10;
+
+  const { cityId,
+    date,
+    time,
+    venue,
+    address,
+    name,
+    description,
+    numOfGuests,
+    limit } = req.body;
+
+  const newEvent = await Event.create({ cityId, date, time, venue, address, name, description, hostId, numOfGuests, limit })
+}))
+
 router.get('/', async (req, res) => {
-    let response = await fetch('/api/events');
-    let events = await response.json();
-    res.render('events', { events });
+  const events = await Event.findAll({ include: { model: City } });
+  res.render('events', { events });
 });
 
-  module.exports = router;
+module.exports = router;
