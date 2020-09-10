@@ -5,7 +5,7 @@ html(lang="en")
         title New Event
     body
       form(method="post" action="/events")
-        input(type="hidden" name="_csrf" value=token)
+        input(type="hidden" name="_csrf" value=csrfToken)
         div
           label Name
           input(type="text" name="name" required)
@@ -18,9 +18,6 @@ html(lang="en")
         div
           label Address
           input(type="text" name="address" required)
-        div
-          label hostId
-          input(type="number" name="hostId" required)
         div
           label limit
           input(type="number" name="limit" required)

@@ -2,7 +2,8 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const { ValidationError } = require("sequelize");
-
+const cookieParser = require("cookie-parser"); 
+const csrf = require('csurf');
 
 
 const { environment } = require("./config");
@@ -14,10 +15,15 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(cors({ origin: "http://localhost:8080" }));
 app.set('view engine', 'pug');
-
+app.use(cookieParser()); // Adding cookieParser() as application-wide middleware
+app.use(express.urlencoded());
+const csrfProtection = csrf({ cookie: true });
 app.use("/events", eventsRouter);
 app.use('/public', express.static('public'));
 
+app.get('/home', (req, res) => {
+  res.render('landing-page');
+})
 
 // Catch unhandled requests and forward to error handler.
 app.use((req, res, next) => {
@@ -49,5 +55,6 @@ app.use((err, req, res, next) => {
     stack: isProduction ? null : err.stack,
   });
 });
+
 
 module.exports = app;

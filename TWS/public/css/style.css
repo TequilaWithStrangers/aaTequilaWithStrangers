@@ -1,3 +1,27 @@
-body {
-  padding: 40px;
+.intro-to-tws {
+  background-color: #F4BD4E;
+  height: 500px;
+  width: 100%;
+  position: relative;
 }
+
+.cover-photo-subtext{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tt-description-wrapper {
+  background-color: #F3ECCE;
+  height: 100px;
+  margin-top: 320px;
+  display: flex;
+}
+
+.what-is-teq-time {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+} 
