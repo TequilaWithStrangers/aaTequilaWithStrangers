@@ -12,6 +12,9 @@ html(lang="en")
         title TWS #{event.name}
     body
         include nav-bar.pug
+        div(class="move-banner")
+            h1(class="move-banner-text") Meet
+            h1(class="move-banner-text2 is-hidden") Drink
         div(class="event" value=event.id)
             div(class="event__details-container")
                 div(class="event__details-top-space")

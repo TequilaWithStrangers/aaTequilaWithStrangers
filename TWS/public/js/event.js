@@ -20,6 +20,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
         signButton.setAttribute('href', 'http://localhost:8080/signout')
     }
 
+    const bannerText = document.querySelector('move-banner-text');
+    const bannerText2 = document.querySelector('move-banner-text2');
+
+    setInterval(()=>{
+        bannerText.classList.toggle('is-hidden');
+        bannerText2.classList.toggle('is-hidden');
+    }, 2000)
+
+
 })
 
 
