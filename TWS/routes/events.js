@@ -21,9 +21,11 @@ router.get('/new', async (req, res) => {
     res.render('new-event-form', { cities });
   });
 
-router.get('/', async (req, res) => {
+router.get('/', asyncHandler( async (req, res) => {
+    const cities = await City.findAll();
+
     const events = await Event.findAll({include:{model:City}});
     res.render('events', { events });
-  });
+  }));
 
   module.exports = router;

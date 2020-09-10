@@ -31,7 +31,7 @@ table( class='pure-table')
             div(class="event__address") 🗺 #{event.address}
             div(class="event__date") 📅 #{event.date}
             div(class="event__limit") #{event.limit - event.numOfGuests} Seats Left
-            progress(class="progress is-success" value=`${event.limit / event.numOfGuests}` max=event.limit) 60%
+            progress(class="progress is-success" value=`${event.numOfGuests}` max=event.limit) #{(event.numOfGuests / event.limit) * 100}%
             div(class="event__na") 🤪 Attending #{event.numOfGuests}
             div
                 a(href=`http://localhost:8080/events/${event.id}`) check it out
