@@ -2,39 +2,59 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css")
+        script(src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js")
+        script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+        link(rel='stylesheet', href='/public/css/new-event-form.css')
         title New Event
     body
-      form(method="post" action="/events")
-        input(type="hidden" name="_csrf" value=token)
-        div
-          label Name
-          input(type="text" name="name" required)
-        div 
-          label Description
-          textarea(name="description")
-        div
-          label Venue Name
-          input(name="venue" type="text" required)
-        div
-          label Address
-          input(type="text" name="address" required)
-        div
-          label hostId
-          input(type="number" name="hostId" required)
-        div
-          label limit
-          input(type="number" name="limit" required)
-        div
-          label Date
-          input(type="date" name="date" required)
-        div
-          label Time
-          input(type="time" name="time" required)
-        div
-          label City
-          select(name="cityId" required)
-            each city in cities
-              option(value=city.id)= city.name
-        div
-          button(type="submit") Submit
+      div(class='container new-form')
+        div(class='row')
+          div(class='col-md-3')
+            div(class='new-form-submit')
+              img(class='bottle-pic' src='../public/images/bottle-pouring.png')
+              div(class='text-box')
+                h2(class='h2-header') Host an event
+                h4(class='h4-text') Get to know people in your city!
+          form(method="post" action="/events")
+          div(class='col-md-9')
+            div(class='new-event-form')
+              div(class='form-group')
+                input(type="hidden" name="_csrf" value=csrfToken)
+              div(class='form-group')
+                  label(class="control-label col-sm-2" for="name") Name
+                  div(class='col-sm-10')
+                    input(type="text" class="form-control" id="name" placeholder="Enter Full Name" name="name" required)
+              div(class='form-group')
+                label(class="control-label col-sm-2" for='description') Description
+                div(class='col-sm-10')
+                  textarea(name="description")
+              div(class='form-group')
+                label(class="control-label col-sm-2" for='venue') Venue Name
+                div(class='col-sm-10')
+                  input(name="venue" type="text" required)
+              div(class='form-group')
+                label(class="control-label col-sm-2" for='address') Address
+                div(class='col-sm-10')
+                  input(type="text" name="address" required)
+              div(class='form-group')
+                label(class="control-label col-sm-2" for=limit) limit
+                div(class='col-sm-10')
+                  input(type="number" name="limit" required)
+              div(class='form-group')
+                label(class="control-label col-sm-2" for='date') Date
+                div(class='col-sm-10')
+                  input(type="date" name="date" required)
+              div(class='form-group')
+                label(class="control-label col-sm-2" for='time') Time
+                div(class='col-sm-10')
+                  input(type="time" name="time" required)
+              div(class='form-group')
+                label(class="control-label col-sm-2" for='city') City
+                div(class='col-sm-10')
+                  select(name="cityId" required)
+                    each city in cities
+                      option(value=city.id)= city.name
+              div(class='form-group')
+                button(type="submit") Submit
 

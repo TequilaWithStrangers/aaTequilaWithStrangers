@@ -1,0 +1,81 @@
+body {
+        background-color: blanchedalmond;
+        height: 1000px;
+    }
+
+    .container {
+        height: 1000px;
+    }
+    .bottle-pic {
+        padding-right: 10px;
+        height: 300px;
+        width: 250px;
+    }
+
+    .text-box {
+        padding-top: 20px;
+    }
+    .h2-header {
+        width: 300px;
+        font-family: Average Sans, sans-serif;
+        padding-top: 10px;
+        font-size: 25px;
+        color: black;
+        font-weight: bold;
+        text-transform: none;
+        font-style: normal;
+        text-decoration: none;
+        line-height: 2em;
+        letter-spacing: 0px;
+    }
+
+    .h4-text {
+        font-family: Average Sans, sans-serif;
+        height: 30px;
+        font-size: 15px;
+        color: black;
+        font-weight: 500;
+        text-transform: none;
+        font-style: normal;
+        text-decoration: none;
+        line-height: 2em;
+        letter-spacing: 0px;
+    }
+	.contact{
+		padding: 4%;
+		height: 400px;
+	}
+	.col-md-3{
+        height: 1000px;
+		background: lightgreen;
+		padding: 4%;
+		border-top-left-radius: 0.5rem;
+		border-bottom-left-radius: 0.5rem;
+	}
+	.contact-info{
+		margin-top:10%;
+	}
+	.contact-info img{
+		margin-bottom: 15%;
+	}
+	.contact-info h2{
+		margin-bottom: 10%;
+	}
+	.col-md-9{
+		background: #fff;
+		padding: 3%;
+		border-top-right-radius: 0.5rem;
+		border-bottom-right-radius: 0.5rem;
+	}
+	.contact-form label{
+		font-weight:600;
+	}
+	.contact-form button{
+		background: #25274d;
+		color: #fff;
+		font-weight: 600;
+		width: 25%;
+	}
+	.contact-form button:focus{
+		box-shadow:none;
+	}

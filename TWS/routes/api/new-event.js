@@ -6,8 +6,6 @@ const { csrfProtection, asyncHandler } = require('../utils/utils');
 
 const router = express.Router();
 
-
-
 router.post('/events', csrfProtection, asyncHandler(async (req, res) => {
     const { cityId,
         date,
@@ -22,5 +20,5 @@ router.post('/events', csrfProtection, asyncHandler(async (req, res) => {
 
     const newEvent = await Event.create({ cityId, date, time, venue, address, name, description, hostId, numOfGuests, limit })
 
-    res.json(newEvent)
+    
 }))
