@@ -1,0 +1,11 @@
+
+body {
+  padding: 40px;
+  background-color:blanchedalmond  ;
+}
+.div-events{
+  display: grid;
+  justify-content: center;
+  margin-right: 100px;
+  color: rgb(125, 219, 125);
+}

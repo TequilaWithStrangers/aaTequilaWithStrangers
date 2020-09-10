@@ -1,5 +1,6 @@
 const express = require("express");
 const {asyncHandler} = require('./utils/utils');
+
 const { Attendee, City, Event, User } = require('../models');
 const router = express.Router();
 const { csrfProtection } = require('./utils/utils');
@@ -12,7 +13,7 @@ router.get("/:id(\\d+)", asyncHandler(async (req, res) => {
     console.log(data)
 
     res.render("event", { data })
-  }))
+  }));
 
 router.get('/new', csrfProtection, async (req, res) => {
     const cities = await City.findAll({ order: ['name'] });
@@ -39,6 +40,6 @@ router.post('/', csrfProtection, asyncHandler(async (req, res) => {
 router.get('/', async (req, res) => {
     const events = await Event.findAll({ include: { model: City } });
     res.render('events', { events });
-  });
+  }));
 
   module.exports = router;

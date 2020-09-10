@@ -10,6 +10,7 @@ const { environment } = require("./config");
 const eventsRouter = require("./routes/events");
 const usersRouter = require("./routes/users");
 const indexRouter = require("./routes/index.js");
+const dashboardRouter = require("./routes/dashboard");
 
 const app = express();
 
@@ -23,7 +24,8 @@ const csrfProtection = csrf({ cookie: true });
 app.use("/events", eventsRouter);
 app.use("/users", usersRouter);
 app.use('/public', express.static('public'));
-app.use('/', indexRouter)
+app.use('/dashboard', dashboardRouter);
+app.use('/', indexRouter);
 
 app.get('/home', (req, res) => {
   res.render('landing-page');
