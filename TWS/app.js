@@ -2,9 +2,6 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const { ValidationError } = require("sequelize");
-
-
-
 const { environment } = require("./config");
 const eventsRouter = require("./routes/events");
 const dashboardRouter = require("./routes/dashboard");

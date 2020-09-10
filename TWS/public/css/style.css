@@ -1,10 +1,10 @@
 body {
   padding: 40px;
-  background-color:#f7bf4dde  ;
+  background-color:blanchedalmond  ;
 }
 .div-events{
   display: grid;
   justify-content: center;
   margin-right: 100px;
-  color: rgb(4, 99, 4);
+  color: rgb(125, 219, 125);
 }
