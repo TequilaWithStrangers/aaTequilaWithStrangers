@@ -3,13 +3,13 @@
     padding: none;
     height: 50px;
     margin-top: 50px;
-    background-color: rgb(125, 219, 125);
+    background-color: #24ac53;
 }
 
 .footer__div{
     width:100%;
     height: 50px;
-    background-color: rgb(125, 219, 125);
+    background-color: #24ac53;
     margin-top: none;
     display: flex;
     flex-direction: row;

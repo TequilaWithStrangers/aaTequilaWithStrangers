@@ -32,7 +32,7 @@ signUpForm.addEventListener("submit", async (e) => {
 
         localStorage.setItem("TEQ_ACCESS_TOKEN", token);
         localStorage.setItem("TEQ_CURRENT_USER_ID", id);
-        // window.location.href = "/";
+        window.location.href = "/events";
 
     } catch (err) {
 
