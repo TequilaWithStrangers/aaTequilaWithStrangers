@@ -54,3 +54,11 @@ h3{
     display: inline-block;
     margin: 20px;
 }
+a.event-link{
+    color: inherit;
+}
+.eventsInYourCity{
+    display:flex;
+    flex-direction:row;
+    width:20vw;
+}

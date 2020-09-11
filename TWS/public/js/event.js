@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     // console.log(passer.value)
     if (loggedInUser) {
         const siso = document.getElementById('siso');
-        siso.innerHTML = 'Sign Out'
+        siso.innerHTML = 'Sign Out';
         const signButton =  document.querySelector('.nav-bar__logout')
         signButton.setAttribute('href', 'http://localhost:8080/signout')
     }
@@ -36,7 +36,7 @@ function event() {
     let index;
     for (let i = window.location.href.length -1; i > 0; i --) {
         if (window.location.href[i] === '/') {
-            
+
             return window.location.href.slice(i + 1)
         }
     }
