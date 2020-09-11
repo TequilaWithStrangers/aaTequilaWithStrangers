@@ -25,6 +25,10 @@ router.get("/log-in", (req, res) => {
     res.render("log-in");
 });
 
+router.get("/", (req, res) => {
+    res.redirect("/home");
+})
+
 
 
 

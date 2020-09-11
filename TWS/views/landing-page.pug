@@ -4,18 +4,19 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel='stylesheet', href='/public/css/landing-page.css')
+        //- link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css")
+        //- script(defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js")
+        link(rel="stylesheet" href="../public/css/landing-page.css")
         title Tequila With Strangers
     body
       div(class='wrapper')
         main(class='wrapper-content')
-          div(class='intro-to-tws cover-photo')
-            header
-              div(class='container')
-                a(class='tws-logo-type')
-                span(class='menu-expando tws-logo-type')
-                nav(class='nav-list')
-            div(class='content')
+          include nav-bar.pug
+          
           div(class='header-container')
+            div(class='shot-glass')
+              img(class='shot-glass-1' src='../public/images/shot-glass.png')
+            //- div(class="move-banner")
             //- img(class='header-photo-img' src='../public/images/tequila.jpg')
             div(class='header-text')
                 div(class='everyone-is-interesting')
@@ -26,12 +27,10 @@ html(lang="en")
                     a(class='sign-up' href='______')
                         button(class='orange sign-up-button-1') Let's Get Tequila
           div(class='tt-description-wrapper')        
-              div(class='tequila-photo')
-                img(class='tequila-photo-1' src='')
               div(class='what-is-teq-time container space')
                 div(class='part')
                   h2(class='tequila-basics') Show up for tequila time
-                  p(class='tequila-basics-subtext') You and a few others join a host at a cafe.
+                  p(class='tequila-basics-subtext') You and a few others join a host at a bar.
                 div(class='part')
                   h2(class='tequila-basics') Have a real conversation
                   p(class='tequila-basics-subtext') You talk for two hours about anything.
@@ -64,3 +63,4 @@ html(lang="en")
                 div(class='centered-button')
                     a(class='sign-up' href='/events')
                     button(class='orange footer-button-cta') Let's get tequila
+          include footer.pug

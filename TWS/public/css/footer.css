@@ -7,6 +7,8 @@
     justify-content: center;
     align-items: center;
     justify-self: center;
+    margin-top: 50px;
+    background-color: #24ac53;
 }
 
 .footer__div{
