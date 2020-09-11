@@ -1,31 +1,6 @@
-table( class='pure-table')
-    thead: tr
-        th name
-        th city
-        th date
-        th time
-        th venue
-        th address
-        th description
-        th host
-        th number of guests
-        th limit
-    tbody
-        tr
-            each event in events
-                td
-                    a(href=`http://localhost:8080/events/${event.id}`)= event.name
-                td= event.City.name
-                td= event.date
-                td= event.time
-                td= event.venue
-                td= event.address
-                td= event.description
-                td= event.hostId
-                td= event.numOfguests
-                td= event.limit
+div(class='grid-card')
     each event in events
-        div(class="event__details box")
+        div(class="event__details box grid-card")
             div(class="event__city") Where? #{event.City.name}
             div(class="event__venue") 📍 #{event.venue}
             div(class="event__address") 🗺 #{event.address}
@@ -35,3 +10,31 @@ table( class='pure-table')
             div(class="event__na") 🤪 Attending #{event.numOfGuests}
             div
                 a(href=`http://localhost:8080/events/${event.id}`) check it out
+
+
+//- table( class='pure-table')
+//-     thead: tr
+//-         th name
+//-         th city
+//-         th date
+//-         th time
+//-         th venue
+//-         th address
+//-         th description
+//-         th host
+//-         th number of guests
+//-         th limit
+//-     tbody
+//-         tr
+//-             each event in events
+//-                 td
+//-                     a(href=`http://localhost:8080/events/${event.id}`)= event.name
+//-                 td= event.City.name
+//-                 td= event.date
+//-                 td= event.time
+//-                 td= event.venue
+//-                 td= event.address
+//-                 td= event.description
+//-                 td= event.hostId
+//-                 td= event.numOfguests
+//-                 td= event.limit

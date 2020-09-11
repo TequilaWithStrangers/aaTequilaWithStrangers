@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cors({ origin: "http://localhost:8080" }));
 app.set('view engine', 'pug');
 app.use(cookieParser()); // Adding cookieParser() as application-wide middleware
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended:false}));
 const csrfProtection = csrf({ cookie: true });
 app.use("/events", eventsRouter);
 app.use("/users", usersRouter);

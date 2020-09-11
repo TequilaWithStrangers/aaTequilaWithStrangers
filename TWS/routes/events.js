@@ -56,9 +56,9 @@ router.post('/', csrfProtection, asyncHandler(async (req, res) => {
   const newEvent = await Event.create({ cityId, date, time, venue, address, name, description, hostId, numOfGuests, limit })
 }))
 
-router.get('/', async (req, res) => {
+router.get('/', asyncHandler(async (req, res) => {
   const events = await Event.findAll({ include: { model: City } });
   res.render('events', { events });
-});
+}));
 
 module.exports = router;
