@@ -1,7 +1,7 @@
 const app = require("../app");
 
-//check to see where we want "index" routes to be 
-// - i.e. those coming off of the root path. 
+//check to see where we want "index" routes to be
+// - i.e. those coming off of the root path.
 
 const express = require("express");
 const { check } = require("express-validator");
@@ -24,6 +24,9 @@ router.get("/sign-up", (async (req, res) => {
 router.get("/log-in", (req, res) => {
     res.render("log-in");
 });
+router.get('/home', (req, res) => {
+    res.render('landing-page');
+  })
 
 router.get("/", (req, res) => {
     res.redirect("/home");

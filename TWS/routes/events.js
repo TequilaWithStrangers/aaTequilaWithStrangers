@@ -97,10 +97,10 @@ router.post('/', csrfProtection, asyncHandler(async (req, res) => {
   res.redirect('/home');
 }))
 
-router.get('/', async (req, res) => {
+router.get('/', asyncHandler(async (req, res) => {
   const events = await Event.findAll({ include: { model: City } });
   res.render('events', { events });
-});
+}));
 
 
 function whatEvent() {

@@ -3,11 +3,15 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
+        title Dashboard
+        script(type="text/javascript" src="../public/js/dashboard.js")
+        link(rel="stylesheet" href="../public/css/event.css")
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css")
+        script(defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js")
+        link(href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet")
     body
         div(class='div-events')
             include nav-bar.pug
         div(class='div-events')
-            h2 Hello These are the currently available events #{event.User.firstName}
-        div(class='div-events')
-            include ./includes/events-table
+            h2 Hello These are the Tequilla Times in your city!
+        div(id='eventsInYourCity')
