@@ -16,22 +16,25 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     where: { id: event.hostId },
     include: { model: City },
   })
-  console.log(host)
-  // const host = await User.findByPk(hostId)
   res.render('event', { event, host })
 }));
 
-router.post('/:id(\\d+)', asyncHandler(async (req, res, next) => {
+router.post('/:id(\\d+)', asyncHandler(async (req, res) => {
   const { userId, eventId } = req.body;
-  try {
-    await Attendee.create({ userId, eventId, createdAt: new Date(), updatedAt: new Date() });
-  } catch (err) {
-    res.render('error', err)
-  }
+  const isThere = await Attendee.findOne({
+    attributes: ['id'],
+    where: { userId, eventId }
+  })
+  console.log(isThere)
+  if (!isThere){
+  await Attendee.create({userId: userId, eventId: eventId, createdAt: new Date(), updatedAt: new Date()});
+
   const event = await Event.findByPk(eventId);
   const num = event.numOfGuests + 1
-  await Event.update({ numOfGuests: num })
-  res.render('dashboard')
+  await event.update({ numOfGuests: num })
+  }
+  const events = await Event.findAll({ include: { model: City } });
+  res.render('events', {events})
 }))
 
 router.get('/new', csrfProtection, async (req, res) => {
