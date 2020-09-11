@@ -25,7 +25,7 @@ console.log(url);
                     <div class="event__limit"> ${event.limit - event.numOfGuests} Seats Left</div>
                     <progress class="progress is-success" value='${event.numOfGuests}' max=${event.limit}> ${(event.numOfGuests / event.limit) * 100}%</progress>
                     <div class="event__na"> 🤪 Attending ${event.numOfGuests} </div>
-                    <a class='event-link' href='http://localhost:8080/events/${event.id}'> check it out</a>
+                    <a class='event-link button1' href='http://localhost:8080/events/${event.id}'> check it out</a>
 
     </div>
     `;
