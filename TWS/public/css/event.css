@@ -18,11 +18,11 @@ time, mark, audio, video, details, summary {
 body{
     font-family: Average Sans, sans-serif;
     background-color: blanchedalmond;
+    font-weight: bold;
 }
 .event{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* height: 800px; */
 
 }
 .event__host-container{
@@ -38,26 +38,21 @@ body{
     margin-top: 30px;
     font-size: 3rem;
     font-family: Average Sans, sans-serif;
+    font-weight: bold;
     text-align: center;
 }
 
 .event__host{
-    /* grid-column: 2; */
     display: flex;
     justify-content: center;
     font-size: 1.3rem;
     text-align: center;
 }
 
-/* .event__host-meet{
-    font-family: 'Montserrat', sans-serif;
-} */
-
 .event__description{
     margin: 30px;
     border: 2px solid gray;
     width: 90%;
-    
 }
 
 .event__details-container{
@@ -66,8 +61,6 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
-    /* padding: 5%; */
 }
 
 .event__details-top-space{
@@ -88,7 +81,6 @@ body{
     justify-content: space-evenly;
     flex-direction: column;
     align-items: flex-start;
-    /* height: 300px; */
     width: 90%;
 }
 .event-join-button{
@@ -127,17 +119,18 @@ body{
 }
 
 .about{
-    background-color: lightgreen;
+    background-color:#24ac53;
     width: 90%;
     padding: 20px;
     margin-top: 30px;
+    margin-bottom: 50px;
     border-radius: 1.5%;
 }
 
 .event__host-picture-container {
     width: 275px;
     height: 325px;
-    background-color: rgb(125, 219, 125);
+    background-color:#24ac53;
     display: flex;
     justify-content: center;
     margin: 5px;
@@ -166,6 +159,7 @@ body{
     -o-background-size: cover;
     background-size: cover;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -175,7 +169,4 @@ body{
 }
 .move-banner-text2{
     font-size: 3rem
-}
-.is-hidden{
-    display: none;
 }

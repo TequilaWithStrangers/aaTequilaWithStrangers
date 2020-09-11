@@ -1,10 +1,9 @@
 link(rel="stylesheet" href="../public/css/nav-bar.css")
-link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet")
+script(type="text/javascript" src="../public/js/nav-bar.js")
 nav(class="nav-bar")
-
-    div(class="nav-bar__logo") 
-        //- strong(style="color: gold") logo
-        img(class="nav-bar__logo-image" src="../public/images/nav-bar-logo.png")
+    div(class="nav-bar__logo")
+        a(href="http://localhost:8080/home")
+            img(class="nav-bar__logo-image" src="../public/images/nav-bar-logo.png")
     div(class="nav-bar__links")
         div(class="nav-bar__t-times") 
             a(href="http://localhost:8080/events" class="") 
@@ -12,8 +11,11 @@ nav(class="nav-bar")
         div(class="nav-bar__dashboard")
             a(href="http://localhost:8080/dashboard" class="") 
                 strong DashBoard
-        div(class="nav-bar__logout")
-            a(href="http://localhost:8080/signin" class="") 
-                strong(id="siso") Sign In
+        div(class="nav-bar__new-event")    
+            a(href="http://localhost:8080/events/new" class="") 
+                strong Create New Event
+        div(class="nav-bar__logout log-out")
+            a(href="http://localhost:8080/log-in" class="lilo-link") 
+                strong(id="lilo-text") Log In
 
             //- button is-success is-light is-small is-outlined is-inverted

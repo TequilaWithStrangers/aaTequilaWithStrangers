@@ -1,21 +1,24 @@
 .footer{
-    display: block;
     padding: none;
-    height: 50px;
+    height: 100px;
+    background-color:#24ac53;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
     margin-top: 50px;
     background-color: #24ac53;
 }
 
 .footer__div{
     width:100%;
-    height: 50px;
+    height: 100%;
     background-color: #24ac53;
     margin-top: none;
     display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
-    box-sizing: border-box;
+    align-items: baseline;
     padding: none;
     border: none;
-    align-items: center;
 }
