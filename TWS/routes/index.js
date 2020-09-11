@@ -28,6 +28,10 @@ router.get('/home', (req, res) => {
     res.render('landing-page');
   })
 
+router.get("/", (req, res) => {
+    res.redirect("/home");
+})
+
 
 
 
