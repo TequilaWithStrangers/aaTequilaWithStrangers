@@ -6,7 +6,7 @@ logOutButton.addEventListener("submit", async (e) => {
         localStorage.removeItem("TEQ_ACCESS_TOKEN");
         localStorage.removeItem("TEQ_CURRENT_USER_ID");
 
-        window.location.href = "/log-in";
+        window.location.href = "/home";
 
     } catch (err) {
         if (err.status >= 400 && err.status < 600) {
