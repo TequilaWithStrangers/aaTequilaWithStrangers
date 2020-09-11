@@ -4,13 +4,10 @@
     grid-template-columns: 60% 1fr;
     grid-template-rows: none;
     height: 75px;
-    background-color: rgb(125, 219, 125);
-    font-family: 'Montserrat', sans-serif;
+    background-color: #24ac53;
+    font-family: Average Sans, sans-serif;
     font-size: 1.2rem;
-    font-weight: 300;
 }
-
-
 
 .nav-bar__logo{
     grid-column: 1;

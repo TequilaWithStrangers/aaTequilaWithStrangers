@@ -1,10 +1,10 @@
 body {
         background-color: blanchedalmond;
-        height: 1000px;
     }
 
     .container {
         height: 1000px;
+        width: 100%;
     }
     .bottle-pic {
         padding-right: 10px;
