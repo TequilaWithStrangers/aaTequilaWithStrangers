@@ -40,20 +40,29 @@ router.get('/new', csrfProtection, async (req, res) => {
 })
 
 router.post('/', csrfProtection, asyncHandler(async (req, res) => {
+  console.log('beginning');
   //TODO update with current user when auth is complete
-  const hostId = 10;
+  
+
+  if (!hostId) {
+    alert('OOPSIES!!!!!!');
+  };
 
   const { cityId,
     date,
     time,
     venue,
+    hostId,
     address,
     name,
     description,
     numOfGuests,
     limit } = req.body;
-
+  
+  console.log('before')
   const newEvent = await Event.create({ cityId, date, time, venue, address, name, description, hostId, numOfGuests, limit })
+  console.log('after');
+  res.redirect('/home');
 }))
 
 router.get('/', async (req, res) => {
