@@ -1,6 +1,12 @@
-.form-group
-    label(for='email') Email Address
-    input#email.form-control(type='email', name="email", placeholder='Email Address')
-.form-group
-    label(for='password') Password
-    input#password.form-control(type='password', name="password", placeholder='Password')
+div(class="field")
+    label(class="label" for='email') Email Address
+    div(class="control has-icons-left has-icons-right")
+        input#email(class="input" type='email', name="email", placeholder='Email Address')
+        span(class="icon is-small is-left")
+            i(class="fas fa-envelope")
+div(class="field")
+    label(class="label" for='password') Password
+    div(class="control has-icons-left has-icons-right")
+        input#password(class="input" type='password', name="password", placeholder='Password')
+        span(class="icon is-small is-left")
+            i(class="fas fa-lock")
