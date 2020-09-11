@@ -5,7 +5,7 @@ const { Attendee, City, Event, User } = require('../models');
 const router = express.Router();
 const { csrfProtection } = require('./utils/utils');
 
-
+//route to specific events
 router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
   const id = parseInt(req.params.id);
   const event = await Event.findOne({
@@ -16,26 +16,55 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
     where: { id: event.hostId },
     include: { model: City },
   })
-  res.render('event', { event, host })
+
+  res.render('event', { event, host });
 }));
 
+//join button route for specific events
 router.post('/:id(\\d+)', asyncHandler(async (req, res) => {
   const { userId, eventId } = req.body;
+  
+  //if user is not logged in
+  if(!userId) {
+    res.render('log-in');
+  }
   const isThere = await Attendee.findOne({
     attributes: ['id'],
     where: { userId, eventId }
-  })
-  console.log(isThere)
+  });
+  // if the user is not signed up for the event yet
   if (!isThere){
   await Attendee.create({userId: userId, eventId: eventId, createdAt: new Date(), updatedAt: new Date()});
 
   const event = await Event.findByPk(eventId);
-  const num = event.numOfGuests + 1
-  await event.update({ numOfGuests: num })
+  const num = event.numOfGuests + 1;
+  await event.update({ numOfGuests: num });
   }
-  const events = await Event.findAll({ include: { model: City } });
-  res.render('events', {events})
-}))
+  const attending = await Attendee.findAll({
+    attributes: ["eventId"],
+    where: { userId },
+    include: { model: Event, as: 'event'}
+  });
+  //events are in attending.events as an array
+  res.render('dashboard', {attending});
+}));
+
+
+//join or leave button query
+router.get('/who-is-logged/:id(\\d+)/\\d+', asyncHandler(async(res, req, next)=>{
+  const userId = req.params.id;
+  const eventId = whatEvent();
+  console.log('HERRRRRREEEE!!!!!!', eventId)
+  const isAttending = await Attendee.findAll({
+    attributes: ['id'],
+    where: {userId, eventId}
+  })
+  console.log(isAttending)
+  
+  res.json(isAttending)
+}));
+
+
 
 router.get('/new', csrfProtection, async (req, res) => {
   const cities = await City.findAll({ order: ['name'] });
@@ -63,5 +92,16 @@ router.get('/', async (req, res) => {
   const events = await Event.findAll({ include: { model: City } });
   res.render('events', { events });
 });
+
+
+function whatEvent() {
+  let index;
+  for (let i = window.location.href.length -1; i > 0; i --) {
+      if (window.location.href[i] === '/') {
+          
+          return window.location.href.slice(i + 1)
+      }
+  }
+}
 
 module.exports = router;
