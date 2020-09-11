@@ -48,8 +48,8 @@ console.log(url);
 }
 document.addEventListener('DOMContentLoaded',async ()=>{
     let userId = localStorage.getItem('TEQ_CURRENT_USER_ID');
-    let events = await fetch('/dashboard/cities/'+`${userId}`)
-    .then(res=>res.json());
+    let data = await fetch('/dashboard/cities/'+`${userId}`)
+    let {events, aEvents} = await data.json();
     let cEvents = document.getElementById('eventsInYourCity');
     for(let i =0; i< events.length -1;i++){
         let event = events[i];

@@ -1,6 +1,6 @@
 const express = require("express");
 const {asyncHandler} = require('./utils/utils');
-const {Event, City, User} = require('../models');
+const {Event, City, User,Attendee} = require('../models');
 const router = express.Router();
 
 
@@ -14,7 +14,9 @@ router.get('/cities/:id(\\d+)',asyncHandler( async (req,res)=>{
     let user = await User.findByPk(userIdN);
     const events = await Event.findAll({where:{cityId:user.cityId},include:{model:City}});
     events.push(user.firstName);
-    res.json(events);
+    const aEvents = await Attendee.findAll({attributes:['id','eventId'],where:{userId},include:{model:Event,as:'event'}});
+    // const aEvents = aEvents[0].Attendee.dataValues.event
+    res.json({events, aEvents});
 }))
 
 
