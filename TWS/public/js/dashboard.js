@@ -25,7 +25,7 @@ console.log(url);
                     <div class="event__limit"> ${event.limit - event.numOfGuests} Seats Left</div>
                     <progress class="progress is-success" value='${event.numOfGuests}' max='${event.limit}'> ${(event.numOfGuests / event.limit) * 100}%</progress>
                     <div class="event__na"> 🤪 Attending ${event.numOfGuests} </div>
-                    <a class='event-link' href='http://localhost:8080/events/${event.id}'> check it out</a>
+                    <a class='event-link button1' href='http://localhost:8080/events/${event.id}'> check it out</a>
 
     </div>
     `;
@@ -49,11 +49,19 @@ console.log(url);
 document.addEventListener('DOMContentLoaded',async ()=>{
     let userId = localStorage.getItem('TEQ_CURRENT_USER_ID');
     let data = await fetch('/dashboard/cities/'+`${userId}`)
-    let {events, aEvents} = await data.json();
+    let {events, aEvents, hEvents} = await data.json();
     let cEvents = document.getElementById('eventsInYourCity');
+    let hostEvents = document.getElementById('host');
     for(let i =0; i< events.length -1;i++){
         let event = events[i];
         cEvents.innerHTML+= createCard(event);
+    }
+    if(hEvents){
+        hostEvents.innerHTML+= `<h2 class= 'div-events color-me size-me'> Here are the Events you are hosting</h>`
+    }
+    for(let i =0; i< hEvents.length;i++){
+        let event = hEvents[i];
+        hostEvents.innerHTML+= createCard(event);
     }
 
 
