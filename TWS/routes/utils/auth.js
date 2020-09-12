@@ -81,6 +81,33 @@ const validateEmailAndPassword = [
     .withMessage("Please provide a password."),
 ];
 
+const validateCreateEvent = [
+  check("name")
+    .exists({ checkFalsy: true })
+    .withMessage("Please provide an event name."),
+  check("description")
+    .exists({ checkFalsy: true })
+    .withMessage("Please provide an event description."),
+  check("venue")
+    .exists({ checkFalsy: true })
+    .withMessage("Please provide a venue name."),
+  check("address")
+    .exists({ checkFalsy: true })
+    .withMessage("Please provide an address."),
+  check("limit")
+    .exists({ checkFalsy: true })
+    .withMessage("Please provide an attendee limit."),
+  check("date")
+    .exists({ checkFalsy: true })
+    .withMessage("Please provide an event date."),
+  check("time")
+    .exists({ checkFalsy: true })
+    .withMessage("Please provide an event time."),
+  check("cityId")
+    .exists({ checkFalsy: true })
+    .withMessage("Please select a city."),
+]
+
 const requireAuth = [bearerToken(), restoreUser];
 
-module.exports = { getUserToken, requireAuth, validateName, validateEmailAndPassword };
+module.exports = { getUserToken, requireAuth, validateName, validateEmailAndPassword, validateCreateEvent };
