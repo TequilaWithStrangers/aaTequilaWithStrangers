@@ -10,14 +10,15 @@ time, mark, audio, video, details, summary {
     padding: 0;
     border: 0;
     font-size: 100%;
-    font-weight: normal;
     vertical-align: baseline;
-    background: transparent;
+}
+.page-container{
+    min-height: 1000px;
 }
 .nav-bar {
     width: 100%;
     display: grid;
-    grid-template-columns: 60% 1fr;
+    /* grid-template-columns: 60% 1fr; */
     grid-template-rows: none;
     height: 100px;
     background-color: #24ac53;
@@ -25,6 +26,8 @@ time, mark, audio, video, details, summary {
     font-weight: bold;
     font-style: normal;
     font-size: 1.2rem;
+    /* position: fixed; */
+    z-index: 5;
 }
 
 .nav-bar__logo{
@@ -35,13 +38,11 @@ time, mark, audio, video, details, summary {
     justify-content: start;
     margin-left: 5%;
     flex-direction: row;
-    height: 75px;
     height: 100px;
 }
 
 .nav-bar__logo-image{
     margin-top: 60px;
-    width: 450px;
     height: 125px;
 }
 

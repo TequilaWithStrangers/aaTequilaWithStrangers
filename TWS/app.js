@@ -38,6 +38,10 @@ app.get('/home', (req, res) => {
   res.render('landing-page');
 })
 
+app.get('/about', (req, res) => {
+  res.render('about');
+})
+
 // Catch unhandled requests and forward to error handler.
 app.use((req, res, next) => {
   const err = new Error("The requested resource couldn't be found.");

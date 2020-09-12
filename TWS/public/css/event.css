@@ -2,7 +2,7 @@ body{
     font-family: Average Sans, sans-serif;
     font-weight: bold;
     font-style: normal;
-    background-color: white;
+    background-color: blanchedalmond;
     font-weight: bold;
 }
 .event{
@@ -40,7 +40,7 @@ body{
     margin: 30px;
     border: 2px solid gray;
     width: 90%;
-    background-color: blanchedalmond;
+    background-color: white;
 
 }
 
@@ -72,7 +72,7 @@ body{
     flex-direction: column;
     align-items: flex-start;
     width: 90%;
-    background-color: blanchedalmond;
+    background-color: white;
     box-sizing: border-box;
 }
 
@@ -120,7 +120,7 @@ body{
     margin-left: 10px;
     width: 90%;
     text-align: center;
-    background-color: blanchedalmond;
+    background-color: white;
     box-sizing: border-box;
 }
 
