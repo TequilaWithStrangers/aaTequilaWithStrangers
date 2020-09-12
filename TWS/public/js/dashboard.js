@@ -1,4 +1,4 @@
-localStorage.setItem('TEQ_CURRENT_USER_ID',1);
+// localStorage.setItem('TEQ_CURRENT_USER_ID',1);
 let createCard = (event)=>{
 
     // div(class="event__details box grid-card")
@@ -23,7 +23,7 @@ console.log(url);
                     <div class="event__address"> 🗺 ${event.address}</div>
                     <div class="event__date"> 📅 ${event.date}</div>
                     <div class="event__limit"> ${event.limit - event.numOfGuests} Seats Left</div>
-                    <progress class="progress is-success" value='${event.numOfGuests}' max=event.limit)> ${(event.numOfGuests / event.limit) * 100}%</progress>
+                    <progress class="progress is-success" value='${event.numOfGuests}' max='${event.limit}'> ${(event.numOfGuests / event.limit) * 100}%</progress>
                     <div class="event__na"> 🤪 Attending ${event.numOfGuests} </div>
                     <a class='event-link' href='http://localhost:8080/events/${event.id}'> check it out</a>
 
