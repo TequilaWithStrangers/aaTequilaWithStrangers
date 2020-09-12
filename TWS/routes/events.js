@@ -68,6 +68,11 @@ asyncHandler(async(req, res) => {
   await Attendee.destroy({
     where: { userId, eventId }
   })
+
+  const event = await Event.findByPk(eventId);
+  const num = event.numOfGuests - 1;
+  await event.update({ numOfGuests: num });
+
     res.redirect('/dashboard');
 }));
 
