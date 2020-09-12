@@ -4,8 +4,8 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Events', [
       {cityId: 1,
-        date: new Date(),
-        time: new Date(),
+        date: new Date(2020, 11, 31),
+        time: new Date().toLocaleTimeString(),
         venue: "House Of Blues",
         address: "1234 Down St.",
         name: "Crazy Shots",
@@ -17,8 +17,8 @@ module.exports = {
         updatedAt: new Date()
       },
       {cityId: 1,
-        date: new Date(),
-        time: new Date(),
+        date: new Date(2020, 11, 20),
+        time: new Date().toLocaleTimeString(),
         venue: "Mothers Pub",
         address: "306 Bacon Ave",
         name: "Salty Bois",
@@ -30,8 +30,8 @@ module.exports = {
         updatedAt: new Date()
       },
       {cityId: 4,
-        date: new Date(),
-        time: new Date(),
+        date: new Date(2020, 9, 15),
+        time: new Date().toLocaleTimeString(),
         venue: "Chuck-E-Cheese",
         address: "800 E Broadway",
         name: "Time-out Parents",
@@ -43,8 +43,8 @@ module.exports = {
         updatedAt: new Date()
       },
       {cityId: 5,
-        date: new Date(),
-        time: new Date(),
+        date: new Date(2020, 10, 5),
+        time: new Date().toLocaleTimeString(),
         venue: "Mansion",
         address: "14 Silicon Way",
         name: "Classy Pants Get-together",

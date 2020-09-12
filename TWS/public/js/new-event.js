@@ -13,7 +13,7 @@ newEventForm.addEventListener("submit", async (e) => {
     const description = formData.get('description')
     // const numOfGuests = formData.get('numOfGuests')
     const limit = formData.get('limit')
-    localStorage.setItem('TEQ_CURRENT_USER_ID', '10')
+    localStorage.setItem('TEQ_CURRENT_USER_ID', 9)
     const hostId = localStorage.getItem('TEQ_CURRENT_USER_ID');
     const numOfGuests = 0;
     if(!hostId) {
