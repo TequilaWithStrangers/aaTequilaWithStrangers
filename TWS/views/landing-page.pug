@@ -3,10 +3,8 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        link(rel='stylesheet', href='/public/css/landing-page.css')
-        //- link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css")
-        //- script(defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js")
         link(rel="stylesheet" href="../public/css/landing-page.css")
+        
         title Tequila With Strangers
     body
       div(class='wrapper')
@@ -15,7 +13,8 @@ html(lang="en")
           
           div(class='header-container')
             div(class='shot-glass')
-              img(class='shot-glass-1' src='../public/images/shot-glass.png')
+              div(class='shot-glass-1')
+                img(class='shot-glass-2' src='../public/images/shot-glass.gif')
             //- div(class="move-banner")
             //- img(class='header-photo-img' src='../public/images/tequila.jpg')
             div(class='header-text')
@@ -45,7 +44,7 @@ html(lang="en")
                         img(class='left tequila-explainer-illustration-1' src='../public/images/grouped-4.png')
                     div(class='tequila-explainer-1 right weird')
                             h2(class='tequila-explainer-header-1') It's weird.
-                            p(class='tequila-explainer-body-1') Everyone at tea time is stepping a little out of their comfort zone. This makes it so much easier to actually learn something unexpected about the people around you. Because open minds are a prerequisite around here.
+                            p(class='tequila-explainer-body-1') Everyone at tequila time is stepping a little out of their comfort zone. This makes it so much easier to actually learn something unexpected about the people around you. Because open minds are a prerequisite around here.
                     div(class='tequila-illus-2')  
                         img(class='right tequila-explainer-illustration-2' src='../public/images/bottle-pouring.png') 
                     div(class='tequila-explainer-2 left never-meet')
@@ -54,8 +53,8 @@ html(lang="en")
                     div(class='tequila-illus-3')
                         img(class='left tequila-explainer-illustration-3' src='../public/images/Pouring-glass-pic.png')
                     div(class='tequila-explainer-3 right high-five')
-                            h2(class='tequila-explainer-header-3') Your hands are made for high fiving!
-                            p(class='tequila-explainer-body-3') And your eyes are made…for eye contact! Real humans are so much cooler than their tweets or Instagram pictures. Tea time has real humans! #nofilter!
+                            h2(class='tequila-explainer-header-3') Your hands are made for pouring!
+                            p(class='tequila-explainer-body-3') And your mouths are made…for drinking! Real humans are so much cooler than their tweets or Instagram pictures. Tequila time has real humans! #nofilter!
           div(class='cta-footer cover-photo')   
             div(class='content')
               div(class='content-box')
@@ -63,4 +62,5 @@ html(lang="en")
                 div(class='centered-button')
                     a(class='sign-up' href='/events')
                     button(class='orange footer-button-cta') Let's get tequila
-          include footer.pug
+include footer.pug
+script(type='text/javascript' src='../public/js/button.js')
