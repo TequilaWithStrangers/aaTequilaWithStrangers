@@ -5,17 +5,13 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css")
         link(rel="stylesheet" href="../public/css/event.css")
-        script(defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js")
-        
+        //- script(defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js")
         script(type="text/javascript" src="../public/js/event.js")
         meta(name="viewport" content="width=device-width, initial-scale=1")
         title TWS #{event.name}
     body
         include nav-bar.pug
-        div(class="move-banner")
-            h1(class="move-banner-text") Meet
-            h1(class="move-banner-text") and
-            h1(class="move-banner-text2") Drink
+        //- div(class="move-banner")
         div(class="event" value=event.id)
             div(class="event__details-container")
                 div(class="event__details-top-space")
@@ -26,13 +22,14 @@ html(lang="en")
                     div(class="event__venue") 📍 #{event.venue}
                     div(class="event__address") 🗺 #{event.address}
                     div(class="event__date") 📅 #{event.date}
+                    div(class="event__time") ⏰ #{event.time}
                     div(class="event__limit") #{event.limit - event.numOfGuests} Seats Left
                     progress(class="progress is-success" value=`${event.numOfGuests}` max=event.limit) #{(event.numOfGuests / event.limit) * 100}%
                     div(class="event__na") 🤪 Attending #{event.numOfGuests}
-                form(method="POST" action=`http://localhost:8080/events/${event.id}`)
+                form(method="POST" action=`http://localhost:8080/events/${event.id}` class="join-button-form")
                     input(id="hidden-form-user-id" type="hidden" name="userId")
                     input(type="hidden" value=event.id name="eventId")
-                    button(type="submit" class="event-join-button button is-success is-large is-outlined is-primary is-link") Join Tequila Time
+                    button(type="submit" class="event-join-button button is-large") Join Tequila Time
                 a(href="http://localhost:8080/events" class="event-see-other") 
                     strong(style="color: gray") See Other Tequila Times 
                 div(class="event-what-is box")

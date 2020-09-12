@@ -1,23 +1,28 @@
 body {
-    background-color:blanchedalmond  ;
+    font-family: Average Sans, sans-serif;
+    background-color:blanchedalmond;
 }
 .div-events{
     display: grid;
     justify-content: center;
-    color: rgb(125, 219, 125);
 }
 #par{
     position: relative;
     top:30px;
-
+    font-weight: 700;
+}
+.size-me{
+    font-size:2rem;
 }
 .head-parent{
     display:grid;
-    background-image: url("../images/62068797-tequila-shots-with-lime-and-salt-on-the-stone-table-\ \(1\).jpg");
-    opacity: .6 ;
-    margin-left: 100px;
-    margin-right: 100px;
+    /* background-image: url("../images/62068797-tequila-shots-with-lime-and-salt-on-the-stone-table-\ \(1\).jpg"); */
+    /* margin-left: 100px;
+    margin-right: 100px; */
     height:200px;
+  }
+  .color-me{
+    color:rgba(239, 98, 54, 1);
   }
 .head-card{
     font-size: 40px;
@@ -61,4 +66,29 @@ a.event-link{
     display:flex;
     flex-direction:row;
     width:20vw;
+}
+.button1 {
+    font: bold 11px Arial;
+    text-decoration: none;
+    background-color: rgba(239, 98, 54, 1);
+    color: #333333;
+    border-radius:25px;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+  }
+  .move-banner{
+    width: 100%;
+    height:250px;
+    background: url("../images/move-banner.gif") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
