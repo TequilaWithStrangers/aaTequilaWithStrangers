@@ -1,4 +1,4 @@
-localStorage.setItem('TEQ_CURRENT_USER_ID',1);
+// localStorage.setItem('TEQ_CURRENT_USER_ID',1);
 let createCard = (event)=>{
 
     // div(class="event__details box grid-card")
