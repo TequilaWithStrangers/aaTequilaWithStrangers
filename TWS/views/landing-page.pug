@@ -7,6 +7,8 @@ html(lang="en")
         //- link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css")
         //- script(defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js")
         link(rel="stylesheet" href="../public/css/landing-page.css")
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css")
+        script(defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js")
         title Tequila With Strangers
     body
       div(class='wrapper')
@@ -24,7 +26,7 @@ html(lang="en")
                 div(class='but-you-dont-discover')
                     span(class='cover-photo-subtext') But you don't discover that when you're staring at a screen.
                 div(class='sign-up-button')
-                    a(class='sign-up' href='______')
+                    a(class='sign-up' href='/sign-up')
                         button(class='orange sign-up-button-1') Let's Get Tequila
           div(class='tt-description-wrapper')        
               div(class='what-is-teq-time container space')
@@ -36,7 +38,10 @@ html(lang="en")
                   p(class='tequila-basics-subtext') You talk for two hours about anything.
                 div(class='part')
                   h2(class='tequila-basics') See what happens
-                  p(class='tequila-basics-subtext') That's it. No strings attached.
+                  p(class='tequila-basics-subtext') You talk for two hours about anything.
+                //- div(class='part')
+                //-   h2(class='tequila-basics') See what happens
+                //-   p(class='tequila-basics-subtext') That's it. No strings attached.
           div(class='container')
             div(class='tequila-explainers')
                 h3(class='capitalize homepage-section-lead') So why are thousands of people doing it?
@@ -61,6 +66,7 @@ html(lang="en")
               div(class='content-box')
                 h1(class='footer-page-cta') Actually talk to people.
                 div(class='centered-button')
-                    a(class='sign-up' href='/events')
-                    button(class='orange footer-button-cta') Let's get tequila
-          include footer.pug
+                    a(class='sign-up' href='/sign-up')
+                      button(class='orange footer-button-cta') Let's get tequila
+include footer.pug
+script(type='text/javascript' src='../public/js/button.js')
