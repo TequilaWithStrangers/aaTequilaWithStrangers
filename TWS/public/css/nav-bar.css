@@ -14,7 +14,6 @@ time, mark, audio, video, details, summary {
     vertical-align: baseline;
     background: transparent;
 }
-  
 .nav-bar {
     width: 100%;
     display: grid;
@@ -23,6 +22,8 @@ time, mark, audio, video, details, summary {
     height: 100px;
     background-color: #24ac53;
     font-family: Average Sans, sans-serif;
+    font-weight: bold;
+    font-style: normal;
     font-size: 1.2rem;
 }
 

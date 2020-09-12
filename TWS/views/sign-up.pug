@@ -2,10 +2,11 @@ extends form-layout.pug
 
 block content
   div(class="sign-up-container container")
-    div(class="errors-container")
+    
     div(class="container card")
       h2(class="header-text") Sign Up
       form(class="sign-up-form")
+        input(type="hidden" name="_csrf" value=csrfToken)
         div(class="field")
           label(class="label" for='firstName') First Name
           div(class="control has-icons-left has-icons-right")
@@ -30,6 +31,7 @@ block content
         div(class="field")
           div(class="control center-div")
             button(class="button is-primary sign-up-button-1" type='submit') Sign Up!
+      div(class="errors-container")
       div(class="center-div")
         a(class="orange-link" href='/log-in') Already have an account? Log in here.
   include footer.pug

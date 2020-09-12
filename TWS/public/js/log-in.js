@@ -6,8 +6,9 @@ logInForm.addEventListener("submit", async (e) => {
     const formData = new FormData(logInForm);
     const email = formData.get("email");
     const password = formData.get("password");
+    const _csrf = formData.get('_csrf');
 
-    const body = { email, password };
+    const body = { email, password, _csrf };
     try {
         const res = await fetch("http://localhost:8080/users/token", {
             method: "POST",
@@ -43,13 +44,13 @@ logInForm.addEventListener("submit", async (e) => {
             if (errors && Array.isArray(errors)) {
                 errorsHtml = errors.map(
                     (message) => `
-                    <div class="alert alert-danger">
+                    <li type="circle">
                         ${message}
-                    </div>
+                    </li>
                     `
                 );
             }
-            errorsContainer.innerHTML = errorsHtml.join("");
+            errorsContainer.innerHTML = `<ul> ${errorsHtml.join("")} </ul>`;
         } else {
             alert(
                 "Something went wrong. Please check your internet connection and try again!"

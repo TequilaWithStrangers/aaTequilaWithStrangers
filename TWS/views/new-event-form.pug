@@ -1,103 +1,60 @@
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet" href="../public/css/event.css")
-        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css")
-        script(defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js")
-        link(rel='stylesheet', href='./public/css/form.css')
-        title New Event
-    body
-      include nav-bar.pug
-      div(class='card')
+extends form-layout.pug
+
+block content
+  div(class='container card')
+    h2(class="header-text") Create New Event
+    form(class='new-event')
+      input(type="hidden" name="_csrf" value=csrfToken)
+      div(class='field')
+        label(class='label') Event Name
+        div(class='control')
+          input(class='input' type='text' name='name' placeholder='Tequila Crawl')
+
+      div(class='field')
+        label(class='label') Description
+        div(class='control')
+          textarea(class='input' type='textarea' name='description' placeholder='Describe your event')
+
+      div(class='field')
+        label(class='label') Venue Name
+        div(class='control')
+          input(class='input' type='text' name='venue' placeholder='Venue Name')  
+
+      div(class='field')
+        label(class='label') Address
+        div(class='control')
+          input(class='input' type='text' name='address' placeholder='Address')
       
-        form(class='new-event')
-          div(class='field')
-            label(class='label') Name
-            div(class='control')
-              input(class='input' type='text' name='name' placeholder='Tequila Terry')
+      div(class='field')
+        label(class='label') Attendee Limit
+        div(class='control')
+          input(class='input' type='number' name='limit')
+      
+      div(class='field')
+        label(class='label') Date
+        div(class='control')
+          input(class='input' type='date' name='date')
 
-          div(class='field')
-            label(class='label') Description
-            div(class='control')
-              textarea(class='input' type='textarea' name='description' placeholder='Describe your event')
-
-          div(class='field')
-            label(class='label') Venue Name
-            div(class='control')
-              input(class='input' type='text' name='venue')  
-
-          div(class='field')
-            label(class='label') Address
-            div(class='control')
-              input(class='input' type='text' name='address')
-          
-          div(class='field')
-            label(class='label') Limit
-            div(class='control')
-              input(class='input' type='number' name='limit')
-          
-          div(class='field')
-            label(class='label') Date
-            div(class='control')
-              input(class='input' type='date' name='date')
-
-          div(class='field')
-            label(class='label') Time
-            div(class='control')
-              input(class='input' type='time' name='time')
-          
-          div(class='field')
-            label(class='label') City
-            div(class='control')
-              select(class='input' name='cityId')
-                each city in cities
-                  option(value=city.id)= city.name
-          
-          div(class='field is-grouped')
-            div(class='control')
-              button(type='submit' class='button is-link') Create Event
-          //- div(class='col-md-9')
-          //-   div(class='new-event-form')
-          //-     div(class='form-group')
-          //-       input(type="hidden" name="_csrf" value=csrfToken)
-          //-     div(class='form-group')
-          //-         label(class="control-label col-sm-2" for="name") Name
-          //-         div(class='col-sm-10')
-          //-           input(type="text" class="form-control" id="name" placeholder="Enter Full Name" name="name" required)
-          //-     div(class='form-group')
-          //-       label(class="control-label col-sm-2" for='description') Description
-          //-       div(class='col-sm-10')
-          //-         textarea(name="description")
-          //-     div(class='form-group')
-          //-       label(class="control-label col-sm-2" for='venue') Venue Name
-          //-       div(class='col-sm-10')
-          //-         input(name="venue" type="text" required)
-          //-     div(class='form-group')
-          //-       label(class="control-label col-sm-2" for='address') Address
-          //-       div(class='col-sm-10')
-          //-         input(type="text" name="address" required)
-          //-     div(class='form-group')
-          //-       label(class="control-label col-sm-2" for=limit) limit
-          //-       div(class='col-sm-10')
-          //-         input(type="number" name="limit" required)
-          //-     div(class='form-group')
-          //-       label(class="control-label col-sm-2" for='date') Date
-          //-       div(class='col-sm-10')
-          //-         input(type="date" name="date" required)
-          //-     div(class='form-group')
-          //-       label(class="control-label col-sm-2" for='time') Time
-          //-       div(class='col-sm-10')
-          //-         input(type="time" name="time" required)
-          //-     div(class='form-group')
-          //-       label(class="control-label col-sm-2" for='city') City
-          //-       div(class='col-sm-10')
-          //-         select(name="cityId" required)
-          //-           each city in cities
-          //-             option(value=city.id)= city.name
-          //-     div(class='form-group')
-          //-       button(type="submit") Submit
-include footer.pug
-script(src="../public/js/new-event.js")
+      div(class='field')
+        label(class='label') Time
+        div(class='control')
+          input(class='input' type='time' name='time')
+      
+      div(class='field')
+        label(class='label') City
+        div(class='control')
+          select(class='input' name='cityId')
+            each city in cities
+              option(value=city.id)= city.name
+      
+      div(class='field')
+        div(class='control center-div')
+          button(class='button is-primary sign-up-button-1' type='submit') Create Event
+    div(class="errors-container")
+    div(class="center-div")
+        a(class="orange-link" href='/events') Change your mind? Go back to Tequila Times.
+  include footer.pug
+  script(src="../public/js/new-event.js")
+  
 
 

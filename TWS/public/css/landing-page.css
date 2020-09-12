@@ -1,4 +1,3 @@
-
 .intro-to-tws {
   background-color:#1D8A43;
   height: 100px;
@@ -303,9 +302,9 @@
 .tequila-explainer-header-2 {
   font-family: Average Sans, sans-serif;
   font-size: 22px;
-  font-weight: bold;
   color: rgba(239, 98, 54, 1);
   text-transform: none;
+  font-weight: bold;
   font-style: normal;
   text-decoration: none;
   line-height: 2em;
