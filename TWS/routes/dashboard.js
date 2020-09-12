@@ -16,7 +16,8 @@ router.get('/cities/:id(\\d+)',asyncHandler( async (req,res)=>{
     events.push(user.firstName);
     const aEvents = await Attendee.findAll({attributes:['id','eventId'],where:{userId},include:{model:Event,as:'event'}});
     // const aEvents = aEvents[0].Attendee.dataValues.event
-    res.json({events, aEvents});
+    const hEvents = await Event.findAll({where:{hostId:userIdN},include:{model:City}});
+    res.json({events, aEvents,hEvents});
 }))
 
 
