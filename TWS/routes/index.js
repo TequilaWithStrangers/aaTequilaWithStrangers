@@ -6,27 +6,27 @@ const app = require("../app");
 const express = require("express");
 const { check } = require("express-validator");
 const bcrypt = require("bcryptjs");
+const { csrfProtection } = require('./utils/utils');
 
 const { asyncHandler, handleValidationErrors } = require("./utils/utils");
-const { getUserToken, requireAuth, validateName, validateEmailAndPassword } = require("./utils/auth");
 const db = require("../models");
 
 const router = express.Router();
 const { User, City } = db;
 
-router.get("/sign-up", (async (req, res) => {
+router.get("/sign-up", csrfProtection, (async (req, res) => {
     const cities = await City.findAll({
         order: [["name", "ASC"]],
     })
-    res.render("sign-up", { cities });
+    res.render("sign-up", { cities, csrfToken: req.csrfToken() });
 }));
 
-router.get("/log-in", (req, res) => {
-    res.render("log-in");
+router.get("/log-in", csrfProtection, (req, res) => {
+    res.render("log-in", { csrfToken: req.csrfToken() });
 });
 router.get('/home', (req, res) => {
     res.render('landing-page');
-  })
+})
 
 router.get("/", (req, res) => {
     res.redirect("/home");
