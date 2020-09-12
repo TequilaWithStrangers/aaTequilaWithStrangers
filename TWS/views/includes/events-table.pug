@@ -10,7 +10,7 @@ div(class='grid-card')
             progress(class="progress is-success" value=`${event.numOfGuests}` max=event.limit) #{(event.numOfGuests / event.limit) * 100}%
             div(class="event__na") 🤪 Attending #{event.numOfGuests}
             div
-                a( class='event-link button1' href=`http://localhost:8080/events/${event.id}`) check it out
+                a( class='event-link' href=`http://localhost:8080/events/${event.id}`) check it out
 
 
 //- table( class='pure-table')
@@ -39,3 +39,4 @@ div(class='grid-card')
 //-                 td= event.hostId
 //-                 td= event.numOfguests
 //-                 td= event.limit
+
