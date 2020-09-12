@@ -16,9 +16,9 @@ newEventForm.addEventListener("submit", async (e) => {
     localStorage.setItem('TEQ_CURRENT_USER_ID', 9)
     const hostId = localStorage.getItem('TEQ_CURRENT_USER_ID');
     const numOfGuests = 0;
-    if(!hostId) {
-        alert('help');
-    }
+    // if(!hostId) {
+    //     alert('help');
+    // }
 
     const body = { cityId, date, time, venue, address, name, description, hostId, numOfGuests, limit }
 
@@ -71,6 +71,6 @@ newEventForm.addEventListener("submit", async (e) => {
         //     alert(
         //         "Something went wrong. Please check your internet connection and try again!"
         //     );
-        
+
     }
 });
