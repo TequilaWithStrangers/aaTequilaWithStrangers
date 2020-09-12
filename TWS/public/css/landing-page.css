@@ -83,7 +83,7 @@
 
 .but-you-dont-discover {
   height: 75px;
- grid-area: 2 / 2 / 3 / 3;
+  grid-area: 2 / 2 / 3 / 3;
   font-family: Average Sans, sans-serif;
   font-size: 19px;
   font-weight: bold;
@@ -169,8 +169,8 @@
 } 
 
 .tequila-basics {
-  padding-bottom: 6%;
-  height:23px;
+  padding-bottom: 15%;
+  height: 23px;
   text-align: center;
   font-family: Average Sans, sans-serif;
   font-size: 19px;
@@ -262,7 +262,7 @@
 }
 
 .tequila-explainer-body-1{ 
-  width: 30%;
+  width: 40%;
   font-family: Average Sans, sans-serif;
   font-size: 15px;
   color: black;
@@ -312,7 +312,7 @@
 }
 
 .tequila-explainer-body-2{ 
-  width: 30%;
+  width: 45%;
   font-family: Average Sans, sans-serif;
   font-size: 15px;
   color: black;
@@ -364,7 +364,7 @@
 }
 
 .tequila-explainer-body-3{ 
-  width: 30%;
+  width: 40%;
   font-family: Average Sans, sans-serif;
   font-size: 15px;
   color: black;
@@ -386,7 +386,7 @@
 }
 
 .tequila-explainer-illustration-3 {
-  height: 400px;
+  height: 550px;
   width: 350px;
   padding-bottom: 20%;
 }
