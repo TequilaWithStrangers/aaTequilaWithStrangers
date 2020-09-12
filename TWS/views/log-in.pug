@@ -2,13 +2,14 @@ extends form-layout.pug
 
 block content
   div(class="log-in-container container")
-    div(class="errors-container")
     div(class="card")
       h2(class="header-text") Log In
       form(class="log-in-form")
+        input(type="hidden" name="_csrf" value=csrfToken)
         include includes/auth-form-fields
         div(class="control center-div")
           button(class="button is-primary sign-up-button-1" type='submit') Log In
+      div(class="errors-container")
       div(class="center-div")
         a(class="orange-link" href='/sign-up') Don't have an account? Sign up here.
   include footer.pug

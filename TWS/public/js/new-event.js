@@ -10,23 +10,25 @@ newEventForm.addEventListener("submit", async (e) => {
     const address = formData.get("address");
     const name = formData.get("name");
     const cityId = formData.get("cityId");
-    const description = formData.get('description')
+    const description = formData.get('description');
+    const _csrf = formData.get('_csrf');
     // const numOfGuests = formData.get('numOfGuests')
     const limit = formData.get('limit')
-    localStorage.setItem('TEQ_CURRENT_USER_ID', 9)
     const hostId = localStorage.getItem('TEQ_CURRENT_USER_ID');
     const numOfGuests = 0;
-    if(!hostId) {
+    if (!hostId) {
         alert('help');
     }
 
-    const body = { cityId, date, time, venue, address, name, description, hostId, numOfGuests, limit }
+    const body = { cityId, date, time, venue, address, name, description, hostId, numOfGuests, limit, _csrf }
 
     try {
-        const res = await fetch("http://localhost:8080/events", {
+        const res = await fetch("http://localhost:8080/auth/events", {
             method: "POST",
             body: JSON.stringify(body),
             headers: {
+                Authorization: `Bearer ${localStorage.getItem(
+                    "TEQ_ACCESS_TOKEN")}`,
                 "Content-Type": "application/json",
             },
         });
@@ -34,43 +36,35 @@ newEventForm.addEventListener("submit", async (e) => {
         if (!res.ok) {
             throw res;
         }
-
-        // const {
-        //     token,
-        //     user: { id },
-        // } = await res.json();
-
-        // localStorage.setItem("TEQ_ACCESS_TOKEN", token);
-        // localStorage.setItem("TEQ_CURRENT_USER_ID", id);
         window.location.href = "/events";
 
     } catch (err) {
 
-        // if (err.status >= 400 && err.status < 600) {
-        //     const errorJSON = await err.json();
-        //     const errorsContainer = document.querySelector(".errors-container");
-        //     let errorsHtml = [
-        //         `
-        //         <div class="alert alert-danger">
-        //             Something went wrong. Please try again.
-        //         </div>
-        //         `,
-        //     ];
-        //     const { errors } = errorJSON;
-        //     if (errors && Array.isArray(errors)) {
-        //         errorsHtml = errors.map(
-        //             (message) => `
-        //             <div class="alert alert-danger">
-        //                 ${message}
-        //             </div>
-        //             `
-        //         );
-        //     }
-        //     errorsContainer.innerHTML = errorsHtml.join("");
-        // } else {
-        //     alert(
-        //         "Something went wrong. Please check your internet connection and try again!"
-        //     );
-        
+        if (err.status >= 400 && err.status < 600) {
+            const errorJSON = await err.json();
+            const errorsContainer = document.querySelector(".errors-container");
+            let errorsHtml = [
+                `
+                <div class="alert alert-danger">
+                    Something went wrong. Please try again.
+                </div>
+                `,
+            ];
+            const { errors } = errorJSON;
+            if (errors && Array.isArray(errors)) {
+                errorsHtml = errors.map(
+                    (message) => `
+                    <li type="circle">
+                        ${message}
+                    </li>
+                    `
+                );
+            }
+            errorsContainer.innerHTML = `<ul> ${errorsHtml.join("")} </ul>`;
+        } else {
+            alert(
+                "Something went wrong. Please check your internet connection and try again!"
+            );
+        }
     }
 });
