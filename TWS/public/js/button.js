@@ -11,6 +11,5 @@ button.addEventListener('mouseout', event => {
     shotGlass.classList.remove('viewed')
     shotGlass.classList.add('shot-glass-1');
     document.querySelector('.shot-glass-2').src='../public/images/shot-glass.gif'
-
 })
 
