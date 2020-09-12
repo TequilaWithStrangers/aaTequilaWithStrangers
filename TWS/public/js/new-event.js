@@ -14,7 +14,6 @@ newEventForm.addEventListener("submit", async (e) => {
     const _csrf = formData.get('_csrf');
     // const numOfGuests = formData.get('numOfGuests')
     const limit = formData.get('limit')
-    // localStorage.setItem('TEQ_CURRENT_USER_ID', '10')
     const hostId = localStorage.getItem('TEQ_CURRENT_USER_ID');
     const numOfGuests = 0;
     if (!hostId) {
