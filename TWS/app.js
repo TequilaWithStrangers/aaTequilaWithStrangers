@@ -30,10 +30,6 @@ app.use('/dashboard', dashboardRouter);
 app.use('/auth', authRouter)
 app.use('/', indexRouter);
 
-app.get('/', (req, res) => {
-  res.redirect('/home')
-})
-
 app.get('/home', (req, res) => {
   res.render('landing-page');
 })

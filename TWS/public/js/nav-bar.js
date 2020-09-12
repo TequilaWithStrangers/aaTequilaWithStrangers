@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', (e) =>{
     const loggedInUser = localStorage.getItem('TEQ_CURRENT_USER_ID');
     const liloLink = document.querySelector('.lilo-link')
 
-    //Changes the link to log in/out depending on token
     if (loggedInUser) {
         const liloText = document.getElementById('lilo-text');
         liloText.innerHTML = 'Log Out'
