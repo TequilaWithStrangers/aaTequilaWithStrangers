@@ -13,8 +13,8 @@ let createCard = (event)=>{
     //             a(href=`http://localhost:8080/events/${event.id}`) check it out
 
 
-let url = `http://localhost:8080/events/${event.id}`;
-console.log(url);
+// let url = `http://localhost:8080/events/${event.id}`;
+// console.log(url);
     return `
     <div class='event__details box grid-card dashCard'>
 
@@ -49,11 +49,13 @@ console.log(url);
 document.addEventListener('DOMContentLoaded',async ()=>{
     let userId = localStorage.getItem('TEQ_CURRENT_USER_ID');
     let data = await fetch('/dashboard/cities/'+`${userId}`)
-    let {events, aEvents, hEvents} = await data.json();
+    let {events, attEv, hEvents} = await data.json();
     let cEvents = document.getElementById('eventsInYourCity');
     let hostEvents = document.getElementById('host');
+    let attendEvents = document.getElementById('attend');
     for(let i =0; i< events.length -1;i++){
         let event = events[i];
+
         cEvents.innerHTML+= createCard(event);
     }
     if(hEvents){
@@ -63,8 +65,12 @@ document.addEventListener('DOMContentLoaded',async ()=>{
         let event = hEvents[i];
         hostEvents.innerHTML+= createCard(event);
     }
+    console.log(attEv);
 
-
+    for(let i =0; i< attEv.length;i++){
+        let event = attEv[i];
+        attendEvents.innerHTML+= createCard(event);
+    }
 
 
 })

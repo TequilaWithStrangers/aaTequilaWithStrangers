@@ -16,9 +16,6 @@ newEventForm.addEventListener("submit", async (e) => {
     const limit = formData.get('limit')
     const hostId = localStorage.getItem('TEQ_CURRENT_USER_ID');
     const numOfGuests = 0;
-    if (!hostId) {
-        alert('help');
-    }
 
     const body = { cityId, date, time, venue, address, name, description, hostId, numOfGuests, limit, _csrf }
 
@@ -39,7 +36,6 @@ newEventForm.addEventListener("submit", async (e) => {
         window.location.href = "/events";
 
     } catch (err) {
-
         if (err.status >= 400 && err.status < 600) {
             const errorJSON = await err.json();
             const errorsContainer = document.querySelector(".errors-container");
