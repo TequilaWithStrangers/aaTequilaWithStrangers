@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', (e) =>{
         liloText.innerHTML = 'Log Out'
         const signButton =  document.querySelector('.nav-bar__logout')
         liloLink.setAttribute('href', '')
-        liloLink.setAttribute('class', 'log-out__function')
+        liloLink.setAttribute('class', 'log-out__function nav-bar__link')
     }
 
     liloLink.addEventListener("click", async (e) => {

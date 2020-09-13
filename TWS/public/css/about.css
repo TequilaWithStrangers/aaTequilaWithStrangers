@@ -34,10 +34,17 @@
     width: 60%;
 }
 
+.about-body-text__tite{
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 4%;
+}
+
 .about-body-text__header{
     color:rgba(239, 98, 54, 1);
     font-size: 2rem;
     padding: 2%;
+    font-weight: bold;
 }
 .about-body-text__text{
     padding: 2%;

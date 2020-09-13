@@ -54,7 +54,7 @@ time, mark, audio, video, details, summary {
     height: 75px;
     align-items: center;
     height: 100px;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .nav-bar__t-times{
@@ -78,7 +78,7 @@ time, mark, audio, video, details, summary {
     padding: 2px;
 }
 
-a {
+.nav-bar__link{
     color: white;
     text-decoration: none;
 }
