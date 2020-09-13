@@ -17,7 +17,17 @@ router.get('/cities/:id(\\d+)',asyncHandler( async (req,res)=>{
     const aEvents = await Attendee.findAll({attributes:['id','eventId'],where:{userId},include:{model:Event,as:'event'}});
     // const aEvents = aEvents[0].Attendee.dataValues.event
     const hEvents = await Event.findAll({where:{hostId:userIdN},include:{model:City}});
-    res.json({events, aEvents,hEvents});
+    let attEv = [];
+    let work = async (aEvents) =>{
+        for(let i =0; i< aEvents.length;i++){
+        let stuff = aEvents[i].event.dataValues;
+        let data = await Event.findByPk(stuff.id,{include:{model:City}});
+        attEv.push(data);
+        }
+        return attEv;
+    }
+    await work(aEvents);
+    res.json({events, attEv ,hEvents});
 }))
 
 
