@@ -32,6 +32,7 @@
     margin: 3%;
     text-align: start;
     width: 60%;
+    font-family: 'Kumbh Sans', sans-serif;
 }
 
 .about-body-text__tite{
@@ -77,7 +78,7 @@
     border: 1px solid rgba(239, 98, 54, 1);
     display: inline-block;
     color: #ffffff;
-    font-family: Average Sans, sans-serif;
+    font-family: 'Kumbh Sans', sans-serif;
     font-weight: bold;
     font-style: normal;
     letter-spacing: 1px;
