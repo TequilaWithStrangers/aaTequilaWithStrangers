@@ -45,7 +45,7 @@
     grid-area: 2 / 2 / 3 / 3;
 }
 .everyone-is-interesting {
-  font-family: Average Sans, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   /* font-family: 'Montserrat', sans-serif; */
   font-size: 19px;
   font-weight: bold;
@@ -55,6 +55,11 @@
   text-decoration: none;
   line-height: 2em;
   letter-spacing: 0px;
+}
+
+.cover-photo-lede {
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 .shot-glass {
@@ -84,7 +89,7 @@
 .but-you-dont-discover {
   height: 75px;
   grid-area: 2 / 2 / 3 / 3;
-  font-family: Average Sans, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   font-size: 19px;
   font-weight: bold;
   color: rgba(239, 98, 54, 1);
@@ -93,6 +98,7 @@
   text-decoration: none;
   line-height: 2em;
   letter-spacing: 0px;
+  padding-top: 2%;
 }
 
 .cover-photo-subtext {
@@ -115,14 +121,15 @@
     display:inline-block;
     cursor:pointer;
     color:#ffffff;
-    font-family: Average Sans, sans-serif;
+    font-family: 'Kumbh Sans', sans-serif;
     font-size: 19px;
     font-weight: bold;
     letter-spacing: 1px;
-	text-decoration: none;
+	  text-decoration: none;
     text-shadow:0px 1px 0px rgba(239, 98, 54, 1);
     box-shadow: inset 0 0 0 0 white;
     transition: ease-out 2s;
+    height: 50px;
 }
 
 .sign-up-button-1:hover {
@@ -151,6 +158,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 .tt-description-wrapper {
@@ -172,7 +180,7 @@
   padding-bottom: 15%;
   height: 23px;
   text-align: center;
-  font-family: Average Sans, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   font-size: 19px;
   font-weight: bold;
   color: rgba(239, 98, 54, 1);
@@ -185,7 +193,7 @@
 
 .tequila-basics-subtext {
   text-align: center;
-  font-family: Average Sans, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   font-size: 15px;
   color: black;
   text-transform: none;
@@ -203,7 +211,7 @@
 .homepage-section-lead {
   padding-top: 40px;
   text-align: center;
-  font-family: Average Sans, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   font-weight: bold;;
   font-size: 22px;
   color: black;
@@ -248,7 +256,7 @@
   padding-right: 800px; */
 }
 .tequila-explainer-header-1 {
-  font-family: Average Sans, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   font-size: 22px;
   font-weight: bold;
   color: rgba(239, 98, 54, 1);
@@ -263,7 +271,7 @@
 
 .tequila-explainer-body-1{ 
   width: 40%;
-  font-family: Average Sans, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   font-size: 15px;
   color: black;
   font-weight: 500;
@@ -300,7 +308,7 @@
   padding-top: 75px; */
 }
 .tequila-explainer-header-2 {
-  font-family: Average Sans, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   font-size: 22px;
   color: rgba(239, 98, 54, 1);
   text-transform: none;
@@ -313,7 +321,7 @@
 
 .tequila-explainer-body-2{ 
   width: 45%;
-  font-family: Average Sans, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   font-size: 15px;
   color: black;
   font-weight: 500;
@@ -352,7 +360,7 @@
 }
 
 .tequila-explainer-header-3 {
-  font-family: Average Sans, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   font-size: 22px;
   font-weight: bold;
   color: rgba(239, 98, 54, 1);
@@ -365,7 +373,7 @@
 
 .tequila-explainer-body-3{ 
   width: 40%;
-  font-family: Average Sans, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   font-size: 15px;
   color: black;
   font-weight: 500;
@@ -399,7 +407,7 @@
 .footer-page-cta {
   padding-top: 10px;
   text-align: center;
-  font-family: Average Sans, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   font-size: 35px;
   color:#5C5C5C;
   font-weight: bold;
@@ -408,6 +416,10 @@
   text-decoration: none;
   line-height: 2em;
   letter-spacing: 0px;
+}
+
+.content-box {
+  padding-top: 1%;
 }
 
 .centered-button {
@@ -424,7 +436,7 @@
     display:inline-block;
     cursor:pointer;
     color:#ffffff;
-    font-family: Average Sans, sans-serif;
+    font-family: 'Kumbh Sans', sans-serif;
     font-size: 19px;
     font-weight: bold;
     letter-spacing: 1px;

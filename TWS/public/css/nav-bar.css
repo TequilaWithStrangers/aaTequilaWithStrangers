@@ -11,7 +11,7 @@ time, mark, audio, video, details, summary {
     border: 0;
     font-size: 100%;
     vertical-align: baseline;
-}
+
 .page-container{
     min-height: 1000px;
 }
@@ -21,7 +21,7 @@ time, mark, audio, video, details, summary {
     grid-template-rows: none;
     height: 100px;
     background-color: #24ac53;
-    font-family: Average Sans, sans-serif;
+    font-family: 'Kumbh Sans', sans-serif;
     font-weight: bold;
     font-style: normal;
     font-size: 1.2rem;
