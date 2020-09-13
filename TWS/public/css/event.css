@@ -1,5 +1,5 @@
 body{
-    font-family: Average Sans, sans-serif;
+    font-family: 'Kumbh Sans', sans-serif;
     font-weight: bold;
     font-style: normal;
     background-color: white;
@@ -22,7 +22,7 @@ body{
 .event-name-title{
     margin-top: 30px;
     font-size: 3rem;
-    font-family: Average Sans, sans-serif;
+    font-family: 'Kumbh Sans', sans-serif;
     font-weight: bold;
     font-style: normal;
     text-align: center;
@@ -89,7 +89,7 @@ body{
     border: 1px solid rgba(239, 98, 54, 1);
     display: inline-block;
     color: #ffffff;
-    font-family: Average Sans, sans-serif;
+    font-family: 'Kumbh Sans', sans-serif;
     font-weight: bold;
     font-style: normal;
     letter-spacing: 1px;
