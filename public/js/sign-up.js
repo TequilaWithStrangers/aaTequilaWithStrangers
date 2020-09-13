@@ -14,7 +14,7 @@ signUpForm.addEventListener("submit", async (e) => {
     const body = { email, password, firstName, lastName, cityId, _csrf };
 
     try {
-        const res = await fetch("http://localhost:8080/users", {
+        const res = await fetch("/users", {
             method: "POST",
             body: JSON.stringify(body),
             headers: {
