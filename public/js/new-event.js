@@ -20,7 +20,7 @@ newEventForm.addEventListener("submit", async (e) => {
     const body = { cityId, date, time, venue, address, name, description, hostId, numOfGuests, limit, _csrf }
 
     try {
-        const res = await fetch("http://localhost:8080/auth/events", {
+        const res = await fetch("/auth/events", {
             method: "POST",
             body: JSON.stringify(body),
             headers: {

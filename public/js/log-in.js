@@ -10,7 +10,7 @@ logInForm.addEventListener("submit", async (e) => {
 
     const body = { email, password, _csrf };
     try {
-        const res = await fetch("http://localhost:8080/users/token", {
+        const res = await fetch("/users/token", {
             method: "POST",
             body: JSON.stringify(body),
             headers: {

@@ -26,11 +26,11 @@ html(lang="en")
                         div(class="event__limit") #{event.limit - event.numOfGuests} Seats Left
                         progress(class="progress is-success" value=`${event.numOfGuests}` max=event.limit) #{(event.numOfGuests / event.limit) * 100}%
                         div(class="event__na") 🤪 Attending #{event.numOfGuests}
-                    form(method="POST" action=`http://localhost:8080/events/${event.id}` class="join-button-form")
+                    form(method="POST" action=`/events/${event.id}` class="join-button-form")
                         input(id="hidden-form-user-id" type="hidden" name="userId")
                         input(type="hidden" value=event.id name="eventId")
                         button(type="submit" class="event-join-button button is-large") Join Tequila Time
-                    a(href="http://localhost:8080/events" class="event-see-other") 
+                    a(href="/events" class="event-see-other") 
                         strong(style="color: gray") See Other Tequila Times 
                     div(class="event-what-is box")
                         p What is Tequila Time, Exactly?
