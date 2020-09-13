@@ -2,7 +2,7 @@ body{
     font-family: Average Sans, sans-serif;
     font-weight: bold;
     font-style: normal;
-    background-color: white;
+    background-color: blanchedalmond;
     font-weight: bold;
 }
 .event{
@@ -17,6 +17,7 @@ body{
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    margin-right:25%;
 }
 
 .event-name-title{
@@ -39,8 +40,8 @@ body{
 .event__description{
     margin: 30px;
     border: 2px solid gray;
-    width: 90%;
-    background-color: blanchedalmond;
+    width: 70%;
+    background-color: white;
 
 }
 
@@ -50,6 +51,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 25%;
 }
 
 .event__details-top-space{
@@ -61,7 +63,7 @@ body{
     padding: 30px 10px;
     text-align: center;
     color:rgba(239, 98, 54, 1);
-
+    font-weight: bold;
 }
 
 .event__details{
@@ -71,8 +73,8 @@ body{
     justify-content: space-evenly;
     flex-direction: column;
     align-items: flex-start;
-    width: 90%;
-    background-color: blanchedalmond;
+    width: 70%;
+    background-color: white;
     box-sizing: border-box;
 }
 
@@ -117,16 +119,15 @@ body{
     justify-content: center;
     padding: 10px;
     margin-top: 35px;
-    margin-left: 10px;
-    width: 90%;
+    width: 70%;
     text-align: center;
-    background-color: blanchedalmond;
+    background-color: white;
     box-sizing: border-box;
 }
 
 .about{
     background-color:#24ac53;
-    width: 90%;
+    width: 70%;
     padding: 20px;
     margin-top: 30px;
     margin-bottom: 50px;
@@ -135,11 +136,11 @@ body{
 
 .event__host-picture-container {
     width: 275px;
-    height: 325px;
+    height: 340px;
     background-color:#24ac53;
     display: flex;
     justify-content: center;
-    margin: 5px;
+    margin: 20px;
     border-radius: 1.5%;
     box-shadow: 2px 2px 3px #aaaaaa;
 }

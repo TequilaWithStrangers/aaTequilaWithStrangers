@@ -2,12 +2,20 @@ link(rel="stylesheet" href="../public/css/footer.css")
 footer(class="footer")
     div(class="footer__div")
         div
-            a About
+            a(class="footer__link" href="/about") About
         div
-            a Contact
+            a(class="footer__link" ) Contact
         div
-            a(href="http://localhost:8080/dashboard") Dashboard
+            a(class="footer__link" href="/dashboard") Dashboard
         div
             p 2020 Tequila With Strangers
         div
-            p Created by Erin, Ben, James and Jaron
+            p Created by 
+                a(class="footer__link" href="https://github.com/theuncoolgirl") Erin, 
+                a(class="footer__link" href="https://github.com/bpu991") Ben, 
+                a(class="footer__link" href="https://github.com/whitejamesthe2nd") James 
+                span and 
+                a(class="footer__link" href="https://github.com/jarondegen") Jaron
+        div(class="git-link")
+            a(href="https://github.com/TequilaWithStrangers/aaTequilaWithStrangers")
+                img(class="git-logo" src="../public/images/github.png")

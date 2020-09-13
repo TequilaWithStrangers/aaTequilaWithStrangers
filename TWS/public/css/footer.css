@@ -1,3 +1,5 @@
+
+
 .footer{
     padding: none;
     height: 100px;
@@ -8,16 +10,24 @@
     align-items: center;
     justify-self: center;
     background-color: #24ac53;
+
 }
 
 .footer__div{
     width:100%;
     height: 100%;
     background-color: #24ac53;
-    margin-top: none;
     display: flex;
     justify-content: space-evenly;
-    align-items: baseline;
-    padding: none;
+    /* align-items: center; */
+    padding-top: 2%;
     border: none;
+}
+
+.footer__link{
+    color:white;
+}
+
+.git-logo{
+    width: 70%;
 }

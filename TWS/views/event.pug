@@ -11,49 +11,49 @@ html(lang="en")
         title TWS #{event.name}
     body
         include nav-bar.pug
-        //- div(class="move-banner")
-        div(class="event" value=event.id)
-            div(class="event__details-container")
-                div(class="event__details-top-space")
-                div(class="event__join")
-                    h2(class="event__join-user" style="font-size: 1.4rem") Join #{host.firstName} for #{event.name}
-                div(class="event__details box")    
-                    div(class="event__city") Where? #{event.City.name}
-                    div(class="event__venue") 📍 #{event.venue}
-                    div(class="event__address") 🗺 #{event.address}
-                    div(class="event__date") 📅 #{event.date}
-                    div(class="event__time") ⏰ #{event.time}
-                    div(class="event__limit") #{event.limit - event.numOfGuests} Seats Left
-                    progress(class="progress is-success" value=`${event.numOfGuests}` max=event.limit) #{(event.numOfGuests / event.limit) * 100}%
-                    div(class="event__na") 🤪 Attending #{event.numOfGuests}
-                form(method="POST" action=`http://localhost:8080/events/${event.id}` class="join-button-form")
-                    input(id="hidden-form-user-id" type="hidden" name="userId")
-                    input(type="hidden" value=event.id name="eventId")
-                    button(type="submit" class="event-join-button button is-large") Join Tequila Time
-                a(href="http://localhost:8080/events" class="event-see-other") 
-                    strong(style="color: gray") See Other Tequila Times 
-                div(class="event-what-is box")
-                    p What is Tequila Time, Exactly?
-                    p 🥃
-                    p --------------
-                    p Tequila Time is where five-ish strangers sit at a cafe with a Host to have a two hour conversation. It's not about anything in particular.
-                    p You're meant to know pretty much nothing about the people that come, aside from the fact that they all signed up for this — just like you. It's self-selecting in that sense.
-                    p However, it may bring you comfort to know a little something about your Host. If so, just keep reading
-                    p
-                    p 👉
-            div(class="event__host-container")
-                div(class="event__name") 
-                    h1(class="event-name-title") TT: #{event.name}
-                div(class="event__host") 
-                    h2(class="event__host-meet") Meet your host, 
-                        strong #{host.firstName} #{host.lastName}
-                div(class="event__host-picture-container")
-                    //- img(class="event__host-picture")
-                div(class="event__host")
-                    h5 #{host.City.name}
-                div(class="event__host")
-                    h5 #{host.email}
-                div(class="event__description box") Description: #{event.description}
-                div(class="about")
-                    p Tequila With Strangers is all about making our cities feel more like neighborhoods. We're more "connected" than ever before, but we're also more alone. And all we want to do is bring people together because, well, the world is better that way. We're not doing anything groundbreaking. We're creating something that would've been incredibly unnecessary 20 years ago. But while we get busier, it's easy to forget the value of a conversation for no reason. A conversation that's intentionally unintentional.
+        div(class='page-container')
+            div(class="event" value=event.id)
+                div(class="event__details-container")
+                    div(class="event__details-top-space")
+                    div(class="event__join")
+                        h2(class="event__join-user" style="font-size: 1.4rem") Join #{host.firstName} for #{event.name}
+                    div(class="event__details box")    
+                        div(class="event__city") Where? #{event.City.name}
+                        div(class="event__venue") 📍 #{event.venue}
+                        div(class="event__address") 🗺 #{event.address}
+                        div(class="event__date") 📅 #{event.date}
+                        div(class="event__time") ⏰ #{event.time}
+                        div(class="event__limit") #{event.limit - event.numOfGuests} Seats Left
+                        progress(class="progress is-success" value=`${event.numOfGuests}` max=event.limit) #{(event.numOfGuests / event.limit) * 100}%
+                        div(class="event__na") 🤪 Attending #{event.numOfGuests}
+                    form(method="POST" action=`http://localhost:8080/events/${event.id}` class="join-button-form")
+                        input(id="hidden-form-user-id" type="hidden" name="userId")
+                        input(type="hidden" value=event.id name="eventId")
+                        button(type="submit" class="event-join-button button is-large") Join Tequila Time
+                    a(href="http://localhost:8080/events" class="event-see-other") 
+                        strong(style="color: gray") See Other Tequila Times 
+                    div(class="event-what-is box")
+                        p What is Tequila Time, Exactly?
+                        p 🥃
+                        p --------------
+                        p Tequila Time is where five-ish strangers sit at a cafe with a Host to have a two hour conversation. It's not about anything in particular.
+                        p You're meant to know pretty much nothing about the people that come, aside from the fact that they all signed up for this — just like you. It's self-selecting in that sense.
+                        p However, it may bring you comfort to know a little something about your Host. If so, just keep reading
+                        p
+                        p 👉
+                div(class="event__host-container")
+                    div(class="event__name") 
+                        h1(class="event-name-title") TT: #{event.name}
+                    div(class="event__host") 
+                        h2(class="event__host-meet") Meet your host, 
+                            strong #{host.firstName} #{host.lastName}
+                    div(class="event__host-picture-container")
+                        //- img(class="event__host-picture")
+                    div(class="event__host")
+                        h5 #{host.City.name}
+                    div(class="event__host")
+                        h5 #{host.email}
+                    div(class="event__description box") Description: #{event.description}
+                    div(class="about")
+                        p Tequila With Strangers is all about making our cities feel more like neighborhoods. We're more "connected" than ever before, but we're also more alone. And all we want to do is bring people together because, well, the world is better that way. We're not doing anything groundbreaking. We're creating something that would've been incredibly unnecessary 20 years ago. But while we get busier, it's easy to forget the value of a conversation for no reason. A conversation that's intentionally unintentional.
         include footer.pug

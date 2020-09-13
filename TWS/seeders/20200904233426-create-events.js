@@ -24,7 +24,7 @@ module.exports = {
         name: "Salty Bois",
         description: "Come hangout and meet the locals in Ocean Beach and take some peanut butter tequila shots with us and maybe play some pool and throw some darts. We will go grab a bag of bacon for a late night snack",
         hostId: 3,
-        numOfGuests: 6,
+        numOfGuests: 10,
         limit: 10,
         createdAt: new Date(),
         updatedAt: new Date()

@@ -65,9 +65,9 @@ router.get('/who-is-logged/:userId(\\d+)/:eventId(\\d+)', asyncHandler(async(req
     attributes: ['id'],
     where: { userId, eventId }
   })
-  console.log(isAttending)
+  const event = await Event.findByPk(eventId)
 
-  res.json(isAttending)
+  res.json([isAttending, event])
 }));
 
 //router for leave button
