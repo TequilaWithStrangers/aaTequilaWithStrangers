@@ -18,7 +18,6 @@ time, mark, audio, video, details, summary {
 .nav-bar {
     width: 100%;
     display: grid;
-    /* grid-template-columns: 60% 1fr; */
     grid-template-rows: none;
     height: 100px;
     background-color: #24ac53;
