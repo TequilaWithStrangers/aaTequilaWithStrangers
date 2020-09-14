@@ -46,6 +46,7 @@
     font-size: 2rem;
     padding: 2%;
     font-weight: bold;
+    width: fit-content;
 }
 .about-body-text__text{
     padding: 2%;
@@ -53,7 +54,7 @@
 }
 
 .list-container{
-    width:89%;
+    width:80%;
 }
 
 .git-hub-container{
