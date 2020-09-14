@@ -1,5 +1,14 @@
 const newEventForm = document.querySelector(".new-event");
 
+window.addEventListener("DOMContentLoaded", async () => {
+    console.log("DOM LOADED")
+    let token = localStorage.getItem('TEQ_ACCESS_TOKEN');
+    console.log(token);
+    if (!token) {
+        window.location.href = "/log-in";
+    }
+});
+
 newEventForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -12,7 +21,6 @@ newEventForm.addEventListener("submit", async (e) => {
     const cityId = formData.get("cityId");
     const description = formData.get('description');
     const _csrf = formData.get('_csrf');
-    // const numOfGuests = formData.get('numOfGuests')
     const limit = formData.get('limit')
     const hostId = localStorage.getItem('TEQ_CURRENT_USER_ID');
     const numOfGuests = 0;
