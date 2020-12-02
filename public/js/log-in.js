@@ -58,3 +58,43 @@ logInForm.addEventListener("submit", async (e) => {
         }
     }
 });
+
+const formDemo = document.querySelector('.demo-login-form');
+
+formDemo.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(formDemo);
+    const email = 'demo@example.com';
+    const password = 'password';
+    const city = 'Boston'
+    const _csrf = formData.get('_csrf');
+
+    const body = { email, password, _csrf };
+
+    const res = await fetch('/users/token', {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
+    const {
+        token,
+        user: { id },
+    } = await res.json();
+
+    localStorage.setItem("TEQ_ACCESS_TOKEN", token);
+    localStorage.setItem("TEQ_CURRENT_USER_ID", id);
+    
+    if (!res.ok) {
+        const { message } = data;
+        const errorsContainer = document.querySelector('#errors-container');
+        errorsContainer.innerHTML = message;
+        return;
+    }
+    // redirect to dashboard
+    window.location.href = '/dashboard';
+
+
+
+});

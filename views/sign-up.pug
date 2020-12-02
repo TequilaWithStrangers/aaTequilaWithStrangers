@@ -1,38 +1,39 @@
 extends form-layout.pug
 
 block content
-  div(class="sign-up-container container")
-    
-    div(class="container card")
-      h2(class="header-text") Sign Up
-      form(class="sign-up-form")
-        input(type="hidden" name="_csrf" value=csrfToken)
-        div(class="field")
-          label(class="label" for='firstName') First Name
-          div(class="control has-icons-left has-icons-right")
-            input#firstName(class="input" type='text' name='firstName' placeholder="First Name")
-            span(class="icon is-small is-left")
-              i(class="fas fa-user")
-        div(class="field")
-          label(class="label" for='lastName') Last Name
-          div(class="control has-icons-left has-icons-right")
-            input#lastName(class="input" type='text' name='lastName' placeholder="Last Name")
-            span(class="icon is-small is-left")
-              i(class="fas fa-user")
-        include includes/auth-form-fields.pug
-        div(class="field")
-          label(class="label" for='cityId') City
-          div(class="control")
-            div(class="select")
-              select#cityId(name='cityId')
-                +option('', '--Please choose an option--')
-                each city in cities
-                  +option(city.id, city.name)
-        div(class="field")
-          div(class="control center-div")
-            button(class="button is-primary sign-up-button-1" type='submit') Sign Up!
-      div(class="errors-container")
-      div(class="center-div")
-        a(class="orange-link" href='/log-in') Already have an account? Log in here.
+  div(class="page-container")
+    div(class='sign-up-container')
+      div(class="card")
+        h2(class="header-text") Sign Up
+        form(class="sign-up-form")
+          input(type="hidden" name="_csrf" value=csrfToken)
+          div(class="field")
+            label(class="label" for='firstName') First Name
+            div(class="control has-icons-left has-icons-right")
+              input#firstName(class="input" type='text' name='firstName' placeholder="First Name")
+              span(class="icon is-small is-left")
+                i(class="fas fa-user")
+          div(class="field")
+            label(class="label" for='lastName') Last Name
+            div(class="control has-icons-left has-icons-right")
+              input#lastName(class="input" type='text' name='lastName' placeholder="Last Name")
+              span(class="icon is-small is-left")
+                i(class="fas fa-user")
+          include includes/auth-form-fields.pug
+          div(class="field")
+            label(class="label" for='cityId') City
+            div(class="control")
+              div(class="select")
+                select#cityId(name='cityId')
+                  +option('', '--Please choose an option--')
+                  each city in cities
+                    +option(city.id, city.name)
+          div(class="field")
+            div(class="control center-div")
+              button(class="button is-primary sign-up-button-1" type='submit') Sign Up!
+        div(class="errors-container")
+        div(class="center-div")
+          a(class="orange-link" href='/log-in') Already have an account? Log in here.
+  
   include footer.pug
   script(src="../public/js/sign-up.js")

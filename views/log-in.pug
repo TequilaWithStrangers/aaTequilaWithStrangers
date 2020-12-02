@@ -10,8 +10,14 @@ block content
           include includes/auth-form-fields
           div(class="control center-div")
             button(class="button is-primary sign-up-button-1" type='submit') Log In
+        form(class="demo-login-form")
+          input#password(type="hidden" name="password" value="password")
+          input#email(type="hidden" name="email" value="demo@example.com")
+          div(class="control center-div")
+            button(class="button is-primary sign-up-button-1" type='submit') Demo
         div(class="errors-container")
         div(class="center-div")
           a(class="orange-link" href='/sign-up') Don't have an account? Sign up here.
-  include footer.pug
+  div(class='footer-container')
+    include footer.pug
   script(src="../public/js/log-in.js")

@@ -1,7 +1,25 @@
 body {
     background-color: blanchedalmond;
+    height: 1360px;
+    width: 100%;
 }
 
+.page-container {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+}
+
+.log-in-container {
+    grid-column: 2/3;
+    display: flex;
+    justify-content: center;
+}
+
+.sign-up-container {
+    grid-column: 2/3;
+    display: flex;
+    justify-content: center;
+}
 .sign-up-button-1{
 	background:linear-gradient(to bottom, rgba(239, 98, 54, 1) 5%, rgba(239, 98, 54, 1) 100%);
     background-color:rgba(239, 98, 54, 1);
@@ -29,8 +47,9 @@ body {
 
 div.card {
     align-self: center;
-    margin-top: 40px;
-    padding: 20px;
+    /* margin-top: 40px; */
+    padding: 40px;
+
 }
 
 a.orange-link {
@@ -60,4 +79,10 @@ div.errors-container {
     justify-content: center;
     margin-top: 20px;
     color: red;
+}
+
+.footer-container {
+    margin-top: 7.5%;
+    height: 100px;
+    /* background-color: blue; */
 }
