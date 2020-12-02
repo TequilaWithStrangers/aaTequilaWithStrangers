@@ -60,6 +60,7 @@ h3{
 .grid-card{
     display: inline-block;
     margin: 20px;
+    /* height: 300px; */
 }
 a.event-link{
     color: inherit;
