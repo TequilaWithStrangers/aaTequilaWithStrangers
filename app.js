@@ -42,6 +42,10 @@ app.get('/about', (req, res) => {
   res.render('about');
 })
 
+app.get('/all-events', (req,res) => {
+  res.render('events');
+})
+
 // Catch unhandled requests and forward to error handler.
 app.use((req, res, next) => {
   const err = new Error("The requested resource couldn't be found.");

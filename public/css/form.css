@@ -82,7 +82,7 @@ div.errors-container {
 }
 
 .footer-container {
-    margin-top: 7.5%;
+    padding-top: 100px;
     height: 100px;
     /* background-color: blue; */
 }

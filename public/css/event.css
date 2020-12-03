@@ -172,3 +172,8 @@ a.event-link{
     margin:30px;
     margin-bottom:30px
 }
+
+.footer-container {
+    padding-top: 100px;
+    height: 100px;
+}

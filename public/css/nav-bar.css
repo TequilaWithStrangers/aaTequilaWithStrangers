@@ -1,4 +1,4 @@
-html, body, body div, span, object, iframe, h2, h4, h5, h6, p, blockquote, pre,
+/* html, body, body div, span, object, iframe, h2, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code, del, dfn, em,
 img, ins, kbd, q, samp, small, strong, sub,
 sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset,
@@ -11,9 +11,9 @@ time, mark, audio, video, details, summary {
     border: 0;
     font-size: 100%;
     vertical-align: baseline;
-}
+} */
 
-.page-container{
+.page-container-1{
     min-height: 1000px;
 }
 .nav-bar {

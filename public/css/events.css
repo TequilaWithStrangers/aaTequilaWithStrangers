@@ -1,21 +1,101 @@
 body {
     font-family: 'Kumbh Sans', sans-serif;
     background-color:blanchedalmond;
+    /* min-height:1600px; */
 }
-.div-events{
+
+.page-container {
+    min-height: 1400px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.eventsInCityContainer {
+    display: grid;
+    grid-template-rows: 0.3fr 1.5fr;
+    /* justify-content: center; */ 
+}
+
+.dashboard-header-1 {
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.header-1 {
+    font-weight: 700;
+    font-size: large;
+    color: rgba(239, 98, 54, 1);
+}
+#eventsInYourCity {
+    grid-row: 2/3;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding-bottom: 10px;
+}
+
+.hostContainer {
+    display: grid;
+    grid-template-rows: 0.3fr 1.5fr;
+    /* justify-content: center; */
+}
+
+.dashboard-header-2 {
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+#host {
+    grid-row: 2/3;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.attendingContainer {
+    display: grid;
+    grid-row: 0.3fr 1.5fr;
+    /* justify-content: center; */
+}
+
+.dashboard-header-3 {
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+#attend {
+    grid-row: 2/3;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+
+
+
+/* .div-events{
     display: grid;
     justify-content: center;
-}
-#par{
+} */
+/* #par{
     position: relative;
     top:30px;
     font-weight: 700;
-}
-.size-me{
+} */
+/* .size-me{
     font-size:2rem;
-}
+} */
 .head-parent{
-    display:grid;
+    /* display:grid; */
     /* background-image: url("../images/62068797-tequila-shots-with-lime-and-salt-on-the-stone-table-\ \(1\).jpg"); */
     /* margin-left: 100px;
     margin-right: 100px; */
@@ -34,8 +114,8 @@ body {
     /* margin-left: 200px;
     margin-right:200px; */
   }
-h2{
-    /* color: white; */
+/* h2{
+    
     position: relative;
     top: 30px;
     font-size: 38px;
@@ -44,16 +124,17 @@ h3{
     position: relative;
     bottom: 20px;
     font-size: 24px;
-}
+} */
+
 .event__details{
     position: relative;
     top:30px;
     border: 2px solid gray;
     /* padding: 10px; */
     display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
     /* height: 300px; */
     width: 200px;
 }
@@ -65,11 +146,17 @@ h3{
 a.event-link{
     color: inherit;
 }
-.eventsInYourCity{
+/* .eventsInYourCity{
     display:flex;
     flex-direction:row;
     width:20vw;
+} */
+
+.box {
+    width: 300px;
+    height: 250px;
 }
+
 .button1 {
     font: bold 11px Arial;
     text-decoration: none;
@@ -94,4 +181,9 @@ a.event-link{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.footer-container {
+    padding-top: 100px;
+    height: 100px;
 }
