@@ -11,6 +11,11 @@ router.use(express.urlencoded());
 const csrfProtection = csrf({ cookie: true });
 // const csrfProtection = require("csurf")({ cookie: true });
 
+router.get('/', asyncHandler(async (req, res) => {
+  const events = await Event.findAll({ include: { model: City } });
+  return res.json({events})
+  // return res.render('events', { events });
+}));
 
 //route to specific events
 router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
@@ -95,7 +100,7 @@ router.get('/new', csrfProtection, async (req, res) => {
 router.post('/', csrfProtection, asyncHandler(async (req, res) => {
 
   if (!hostId) {
-    alert('OOPSIES!!!!!!');
+    alert('no host id');
   };
 
   const { cityId,
@@ -113,9 +118,6 @@ router.post('/', csrfProtection, asyncHandler(async (req, res) => {
   res.redirect('/home');
 }));
 
-router.get('/', asyncHandler(async (req, res) => {
-  const events = await Event.findAll({ include: { model: City } });
-  res.render('events', { events });
-}));
+
 
 module.exports = router;

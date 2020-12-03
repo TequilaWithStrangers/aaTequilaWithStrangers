@@ -1,7 +1,10 @@
-body {
+/* body {
         background-color: blanchedalmond;
+    } */
+    .page-container {
+        height: 1900px;
+        background-color: blue;
     }
-
     .container {
         height: 1000px;
         width: 100%;
@@ -78,4 +81,9 @@ body {
 	}
 	.contact-form button:focus{
 		box-shadow:none;
-	}
+    }
+    
+    .footer-container {
+    padding-top: 100px;
+    height: 100px;
+    }

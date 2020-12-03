@@ -40,5 +40,4 @@ router.get('/cities/:id(\\d+)',asyncHandler( async (req,res)=>{
 
 
 
-
 module.exports = router;
