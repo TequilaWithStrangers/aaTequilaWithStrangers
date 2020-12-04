@@ -28,7 +28,7 @@ logInForm.addEventListener("submit", async (e) => {
         localStorage.setItem("TEQ_ACCESS_TOKEN", token);
         localStorage.setItem("TEQ_CURRENT_USER_ID", id);
 
-        window.location.href = "/events";
+        window.location.href = "/all-events";
     } catch (err) {
         if (err.status >= 400 && err.status < 600) {
             const errorJSON = await err.json();

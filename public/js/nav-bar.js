@@ -5,9 +5,13 @@ document.addEventListener('DOMContentLoaded', (e) =>{
 
     //Changes the link to log in/out depending on token
     if (loggedInUser) {
+        //const dashboard = document.getElementById('dashboard');
         const liloText = document.getElementById('lilo-text');
         liloText.innerHTML = 'Log Out'
+        // dashboard.innerHTML = 'Dashboard'
         const signButton =  document.querySelector('.nav-bar__logout')
+        // dashboard.removeAttribute("href")
+        // dashboard.setAttribute('href', '/dashboard')
         liloLink.setAttribute('href', '')
         liloLink.setAttribute('class', 'log-out__function nav-bar__link')
     }
