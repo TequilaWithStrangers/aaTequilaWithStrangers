@@ -1,7 +1,7 @@
 const cors = require("cors");
 const express = require("express");
 const morgan = require("morgan");
-
+const path = require('path')
 const { ValidationError } = require("sequelize");
 const cookieParser = require("cookie-parser");
 const csrf = require('csurf');
@@ -12,13 +12,14 @@ const usersRouter = require("./routes/users");
 const indexRouter = require("./routes/index.js");
 const dashboardRouter = require("./routes/dashboard");
 const authRouter = require("./routes/auth");
-
+const favicon = require('serve-favicon');
 const app = express();
 
 app.use(cors({ origin: "http://localhost:8080" }));
 app.use(morgan("dev"));
 app.use(express.json());
-
+app.use(express.static(path.join(__dirname, 'public')))
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.set('view engine', 'pug');
 app.use(cookieParser()); // Adding cookieParser() as application-wide middleware
 app.use(express.urlencoded({ extended: false }));

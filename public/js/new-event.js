@@ -41,7 +41,7 @@ newEventForm.addEventListener("submit", async (e) => {
         if (!res.ok) {
             throw res;
         }
-        window.location.href = "/events";
+        window.location.href = "/all-events";
 
     } catch (err) {
         if (err.status >= 400 && err.status < 600) {

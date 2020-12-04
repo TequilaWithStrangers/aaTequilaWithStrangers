@@ -1,10 +1,11 @@
 body {
     background-color: blanchedalmond;
-    height: 1360px;
-    width: 100%;
+    
 }
 
 .page-container {
+    height: 1000px;
+    width: 100%;
     display: grid;
     grid-template-columns: 0.5fr 1fr 0.5fr;
 }
@@ -15,6 +16,13 @@ body {
     justify-content: center;
 }
 
+.form-container {
+    grid-column: 2/3;
+    display: flex;
+    
+    max-width: 50%;
+    
+}
 .sign-up-container {
     grid-column: 2/3;
     display: flex;
