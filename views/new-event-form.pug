@@ -2,58 +2,59 @@ extends form-layout.pug
 
 block content
   div(class='page-container')
-    div(class='container card')
-      h2(class="header-text") Create New Event
-      form(class='new-event')
-        input(type="hidden" name="_csrf" value=csrfToken)
-        div(class='field')
-          label(class='label') Event Name
-          div(class='control')
-            input(class='input' type='text' name='name' placeholder='Tequila Crawl')
+    div(class='sign-up-container')
+      div(class='card')
+        h2(class="header-text") Create New Event
+        form(class='new-event')
+          input(type="hidden" name="_csrf" value=csrfToken)
+          div(class='field')
+            label(class='label') Event Name
+            div(class='control')
+              input(class='input' type='text' name='name' placeholder='Tequila Crawl')
 
-        div(class='field')
-          label(class='label') Description
-          div(class='control')
-            textarea(class='input' type='textarea' name='description' placeholder='Describe your event')
+          div(class='field')
+            label(class='label') Description
+            div(class='control')
+              textarea(class='input' type='textarea' name='description' placeholder='Describe your event')
 
-        div(class='field')
-          label(class='label') Venue Name
-          div(class='control')
-            input(class='input' type='text' name='venue' placeholder='Venue Name')  
+          div(class='field')
+            label(class='label') Venue Name
+            div(class='control')
+              input(class='input' type='text' name='venue' placeholder='Venue Name')  
 
-        div(class='field')
-          label(class='label') Address
-          div(class='control')
-            input(class='input' type='text' name='address' placeholder='Address')
-        
-        div(class='field')
-          label(class='label') Attendee Limit
-          div(class='control')
-            input(class='input' type='number' name='limit' min='1')
-        
-        div(class='field')
-          label(class='label') Date
-          div(class='control')
-            input(class='input' type='date' name='date')
+          div(class='field')
+            label(class='label') Address
+            div(class='control')
+              input(class='input' type='text' name='address' placeholder='Address')
+          
+          div(class='field')
+            label(class='label') Attendee Limit
+            div(class='control')
+              input(class='input' type='number' name='limit' min='1')
+          
+          div(class='field')
+            label(class='label') Date
+            div(class='control')
+              input(class='input' type='date' name='date')
 
-        div(class='field')
-          label(class='label') Time
-          div(class='control')
-            input(class='input' type='time' name='time')
-        
-        div(class='field')
-          label(class='label') City
-          div(class='control')
-            select(class='input' name='cityId')
-              each city in cities
-                option(value=city.id)= city.name
-        
-        div(class='field')
-          div(class='control center-div')
-            button(class='button is-primary sign-up-button-1' type='submit') Create Event
-      div(class="errors-container")
-      div(class="center-div")
-          a(class="orange-link" href='/events') Change your mind? Go back to Tequila Times.
+          div(class='field')
+            label(class='label') Time
+            div(class='control')
+              input(class='input' type='time' name='time')
+          
+          div(class='field')
+            label(class='label') City
+            div(class='control')
+              select(class='input' name='cityId')
+                each city in cities
+                  option(value=city.id)= city.name
+          
+          div(class='field')
+            div(class='control center-div')
+              button(class='button is-primary sign-up-button-1' type='submit') Create Event
+        div(class="errors-container")
+        div(class="center-div")
+            a(class="orange-link" href='/events') Change your mind? Go back to Tequila Times.
   div(class='footer-container') 
     include footer.pug
   script(src="../public/js/new-event.js")
