@@ -14,6 +14,7 @@ body {
     grid-column: 2/3;
     display: flex;
     justify-content: center;
+    padding-bottom: 170px;
 }
 
 .form-container {
@@ -27,6 +28,7 @@ body {
     grid-column: 2/3;
     display: flex;
     justify-content: center;
+    padding-bottom: 60px;
 }
 .sign-up-button-1{
 	background:linear-gradient(to bottom, rgba(239, 98, 54, 1) 5%, rgba(239, 98, 54, 1) 100%);
