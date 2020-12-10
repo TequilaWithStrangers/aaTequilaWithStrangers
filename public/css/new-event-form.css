@@ -2,7 +2,7 @@
         background-color: blanchedalmond;
     } */
     .page-container {
-        height: 1900px;
+        min-height: 1200px;
         background-color: blue;
     }
     .container {
