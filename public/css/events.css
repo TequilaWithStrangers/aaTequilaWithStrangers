@@ -6,11 +6,14 @@ body {
 
 .page-container {
     min-height: 1400px;
+    width:100%;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
+    /* overflow-x: auto; */
 }
 
 .eventsInCityContainer {
+    width:100%;
     display: grid;
     grid-template-rows: 0.3fr 1.5fr;
     /* justify-content: center; */ 
@@ -30,14 +33,16 @@ body {
     color: rgba(239, 98, 54, 1);
 }
 #eventsInYourCity {
+   
     grid-row: 2/3;
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    flex-wrap: wrap;
     padding-bottom: 10px;
 }
 
 .hostContainer {
+    width:100%;
     display: grid;
     grid-template-rows: 0.3fr 1.5fr;
     /* justify-content: center; */
@@ -52,13 +57,16 @@ body {
 }
 
 #host {
+    
     grid-row: 2/3;
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
 }
 
 .attendingContainer {
+    width:100%;
     display: grid;
     grid-row: 0.3fr 1.5fr;
     /* justify-content: center; */
@@ -73,10 +81,12 @@ body {
 }
 
 #attend {
+    
     grid-row: 2/3;
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
 }
 
 
@@ -137,6 +147,7 @@ h3{
     align-items: center;
     /* height: 300px; */
     width: 200px;
+    max-height: 350px;
 }
 .grid-card{
     display: inline-block;
