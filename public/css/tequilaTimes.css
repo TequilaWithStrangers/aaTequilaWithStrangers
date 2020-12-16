@@ -16,6 +16,7 @@
     grid-row: 2/3;
     display: grid;
     grid-template-rows: 0.6fr 0.5fr 0.6fr;
+    /* overflow-x: auto; */
 }
 
 .header-1 {
@@ -45,16 +46,12 @@
 .div-events {
     grid-row: 3/4;
     display: flex;
-    padding-left: 200px;
     justify-content: center;
-    align-items: flex-start;
-    /* overflow: auto; */
+    flex-wrap: wrap;
+    padding-left: 200px;
 }
+
 .head-parent{
-    /* display:grid; */
-    /* background-image: url("../images/62068797-tequila-shots-with-lime-and-salt-on-the-stone-table-\ \(1\).jpg"); */
-    /* margin-left: 100px;
-    margin-right: 100px; */
     height:200px;
   }
   .color-me{
@@ -92,6 +89,7 @@ h3{
     align-items: center;
     /* height: 300px; */
     width: 200px;
+    max-height: 350px;
 }
 .grid-card{
     display: inline-block;
