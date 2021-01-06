@@ -26,20 +26,27 @@ document.addEventListener('DOMContentLoaded', async ()=>{
     //determines button is join or leave event
     const attending = await fetch(`/events/who-is-logged/${loggedInUser}/${thisEvent}`)
     .then(res => res.json())
-    // .then(res=> console.log(res))
-    console.log(attending[1].numOfGuests >= attending[1].limit)
+
     if (attending[1].numOfGuests >= attending[1].limit){
     const joinButton = document.querySelector('.event-join-button');
+    const joinForm = document.querySelector('.join-button-form');
     joinButton.innerHTML = 'Tequila Time Full';
     joinButton.setAttribute('class', 'event-join-button button is-large disabled');
     joinButton.disabled = true;
     joinForm.setAttribute('href', './events')
-    }else if (attending[0][0].id){
+    } else if (attending[0][0] && attending[0][0].id){
             const joinButton = document.querySelector('.event-join-button');
             joinButton.innerHTML = 'Leave Tequila Time';
             joinForm = document.querySelector('.join-button-form');
             joinForm.setAttribute('action', `/events/leave/${loggedInUser}/${thisEvent}`)
     }
+
+    const host = document.querySelector('.event__host-container').getAttribute('value');
+    if (host !== loggedInUser) {
+        const updateLinks = document.querySelector('.update-event-form');
+        updateLinks.innerHTML = null;
+    }
+
 })
 
 

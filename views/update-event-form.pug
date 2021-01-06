@@ -1,0 +1,62 @@
+extends form-layout.pug
+
+block content
+  div(class='page-container')
+    div(class='sign-up-container')
+      div(class='card')
+        h2(class="header-text") Update Event
+        form(class='update-event-form')
+          input(type="hidden" name="_csrf" value=csrfToken)
+          input(type="hidden" name="numOfGuests" value=event.numOfGuests)
+          input(type="hidden" name="eventId" value=event.id)
+          div(class='field')
+            label(class='label') Event Name
+            div(class='control')
+              input(class='input' type='text' name='name' value=event.name)
+
+          div(class='field')
+            label(class='label') Description
+            div(class='control')
+              textarea(class='input' type='textarea' name='description') #{event.description}
+
+          div(class='field')
+            label(class='label') Venue Name
+            div(class='control')
+              input(class='input' type='text' name='venue' value=event.venue)  
+
+          div(class='field')
+            label(class='label') Address
+            div(class='control')
+              input(class='input' type='text' name='address' value=event.address)
+          
+          div(class='field')
+            label(class='label') Attendee Limit
+            div(class='control')
+              input(class='input' type='number' name='limit' min='1' value=event.limit)
+          
+          div(class='field')
+            label(class='label') Date
+            div(class='control')
+              input(class='input' type='date' name='date' value=event.date)
+
+          div(class='field')
+            label(class='label') Time
+            div(class='control')
+              input(class='input' type='time' name='time' value=event.time)
+          
+          div(class='field')
+            label(class='label') City
+            div(class='control')
+              select(class='input' name='cityId' value=event.cityId)
+                each city in cities
+                  option(value=city.id)= city.name
+          
+          div(class='field')
+            div(class='control center-div')
+              button(class='button is-primary sign-up-button-1' type='submit') Update Event
+        div(class="errors-container")
+        div(class="center-div")
+            a(class="orange-link" href='/all-events') Change your mind? Go back to Tequila Times.
+  div(class='footer-container') 
+    include footer.pug
+  script(src="../public/js/update-event.js")

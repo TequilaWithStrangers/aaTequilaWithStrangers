@@ -7,7 +7,6 @@ const { check } = require("express-validator");
 const { secret, expiresIn } = jwtConfig;
 
 const getUserToken = (user) => {
-  console.log(user.id, user.email);
   const userDataForToken = {
     id: user.id,
     email: user.email,
@@ -19,7 +18,6 @@ const getUserToken = (user) => {
     secret,
     { expiresIn: parseInt(expiresIn, 10) } // 604,800 seconds = 1 week
   );
-  console.log(token);
   return token;
 };
 

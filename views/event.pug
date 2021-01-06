@@ -30,6 +30,11 @@ html(lang="en")
                         input(id="hidden-form-user-id" type="hidden" name="userId")
                         input(type="hidden" value=event.id name="eventId")
                         button(type="submit" class="event-join-button button is-large") Join Tequila Time
+                    div(class="update-event-form")
+                        form(method="POST" action=`/events/delete/${event.id}` class="delete-event-form")
+                            button(type="submit" class="delete-event-button button") Delete Event
+                        form(method="GET" action=`/update/${event.id}` class="update-event-form")
+                            button(type="submit" class="update-event-button button") Update Event
                     a(href="/events" class="event-see-other") 
                         strong(style="color: gray") See Other Tequila Times 
                     div(class="event-what-is box")
@@ -41,7 +46,7 @@ html(lang="en")
                         p However, it may bring you comfort to know a little something about your Host. If so, just keep reading
                         p
                         p 👉
-                div(class="event__host-container")
+                div(class="event__host-container" value=host.id)
                     div(class="event__name") 
                         h1(class="event-name-title") TT: #{event.name}
                     div(class="event__host") 

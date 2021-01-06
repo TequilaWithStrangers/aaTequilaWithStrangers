@@ -16,11 +16,8 @@ let createCard = (event) => {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    console.log('hi======')
     let data = await fetch('/events')
-    console.log(data)
     let { events } = await data.json();
-    console.log(events)
     let allEvents = document.getElementById('all-events');
     for (let i = 0; i < events.length; i++) {
         let event = events[i];
