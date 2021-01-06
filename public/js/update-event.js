@@ -1,4 +1,4 @@
-const newEventForm = document.querySelector(".new-event");
+const updateEventForm = document.querySelector(".update-event-form");
 
 window.addEventListener("DOMContentLoaded", async () => {
     let token = localStorage.getItem('TEQ_ACCESS_TOKEN');
@@ -7,10 +7,10 @@ window.addEventListener("DOMContentLoaded", async () => {
     }
 });
 
-newEventForm.addEventListener("submit", async (e) => {
+updateEventForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const formData = new FormData(newEventForm);
+    const formData = new FormData(updateEventForm);
     const time = formData.get("time");
     const date = formData.get("date");
     const venue = formData.get("venue");
@@ -21,13 +21,28 @@ newEventForm.addEventListener("submit", async (e) => {
     const _csrf = formData.get('_csrf');
     const limit = formData.get('limit')
     const hostId = localStorage.getItem('TEQ_CURRENT_USER_ID');
-    const numOfGuests = 0;
+    const numOfGuests = formData.get('numOfGuests');
 
-    const body = { cityId, date, time, venue, address, name, description, hostId, numOfGuests, limit, _csrf }
+    const thisEvent = formData.get('eventId');
+
+    const body = { cityId, date, time, venue, address, name, description, hostId, numOfGuests, limit, _csrf, thisEvent }
+
+    //Finds the event id via url
+    // function whatEvent() {
+    //     let index;
+    //     for (let i = window.location.href.length - 1; i > 0; i--) {
+    //         if (window.location.href[i] === '/') {
+    //             return window.location.href.slice(i + 1)
+    //         }
+    //     }
+    // }
+    // const thisEvent = whatEvent(); 
+    
+
 
     try {
-        const res = await fetch("/auth/events", {
-            method: "POST",
+        const res = await fetch(`/auth/update/${thisEvent}`, {
+            method: "PUT",
             body: JSON.stringify(body),
             headers: {
                 Authorization: `Bearer ${localStorage.getItem(
@@ -39,7 +54,7 @@ newEventForm.addEventListener("submit", async (e) => {
         if (!res.ok) {
             throw res;
         }
-        window.location.href = "/all-events";
+        window.location.href = `/events/${thisEvent}`;
 
     } catch (err) {
         if (err.status >= 400 && err.status < 600) {
@@ -69,4 +84,8 @@ newEventForm.addEventListener("submit", async (e) => {
             );
         }
     }
-});
+
+
+})
+
+

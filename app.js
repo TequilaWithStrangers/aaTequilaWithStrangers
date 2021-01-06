@@ -12,6 +12,7 @@ const usersRouter = require("./routes/users");
 const indexRouter = require("./routes/index.js");
 const dashboardRouter = require("./routes/dashboard");
 const authRouter = require("./routes/auth");
+const updateRouter = require("./routes/update");
 const favicon = require('serve-favicon');
 const app = express();
 
@@ -25,6 +26,7 @@ app.use(cookieParser()); // Adding cookieParser() as application-wide middleware
 app.use(express.urlencoded({ extended: false }));
 const csrfProtection = csrf({ cookie: true });
 app.use("/events", eventsRouter);
+app.use("/update", updateRouter);
 app.use("/users", usersRouter);
 app.use('/public', express.static('public'));
 app.use('/dashboard', dashboardRouter);

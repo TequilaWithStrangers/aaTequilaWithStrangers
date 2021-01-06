@@ -62,6 +62,17 @@ router.post('/:id(\\d+)', asyncHandler(async (req, res) => {
   res.render('dashboard', {attending});
 }));
 
+//router for delete event
+router.delete('/delete/:id(\\d+)',
+asyncHandler(async (req, res) => {
+  const id = parseInt(req.params.id);
+  await Event.destroy({
+    where: { id }
+  })
+
+  res.redirect('/dashboard')
+}));
+
 
 //join or leave button fetch route
 router.get('/who-is-logged/:userId(\\d+)/:eventId(\\d+)', asyncHandler(async(req, res)=>{
@@ -90,6 +101,19 @@ asyncHandler(async(req, res) => {
     res.redirect('/dashboard');
 }));
 
+//router for delete event
+router.post('/delete/:id(\\d+)', 
+asyncHandler(async (req, res) => {
+  const id = parseInt(req.params.id);
+  await Attendee.destroy({
+    where: { eventId: id}
+  })
+  await Event.destroy({
+    where: { id }
+  })
+
+  res.redirect('/dashboard')
+}));
 
 
 router.get('/new', csrfProtection, async (req, res) => {
@@ -117,7 +141,6 @@ router.post('/', csrfProtection, asyncHandler(async (req, res) => {
   const newEvent = await Event.create({ cityId, date, time, venue, address, name, description, hostId, numOfGuests, limit })
   res.redirect('/home');
 }));
-
 
 
 module.exports = router;

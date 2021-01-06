@@ -9,15 +9,12 @@ eventsRouter.get('/', async (req, res) => {
     res.json(events);
 })
 
-eventsRouter.get('/', async (req,res) =>{
-    const events = await Event.findAll({include:{model:City}});
-    res.json(events);
-})
-
-
+// eventsRouter.get('/', async (req,res) =>{
+//     const events = await Event.findAll({include:{model:City}});
+//     res.json(events);
+// })
 
 eventsRouter.get('/:id(\\d+)', asyncHandler(async(req, res, next) => {
-
     const id = parseInt(req.params.id);
     const event = await Event.findOne({
         where: { id },
@@ -25,9 +22,8 @@ eventsRouter.get('/:id(\\d+)', asyncHandler(async(req, res, next) => {
     });
 
     const host = await User.findByPk(event.hostId)
-    console.log(host)
-    // const host = await User.findByPk(hostId)
     res.json({ event, host })
 }));
+
 
 module.exports = eventsRouter;

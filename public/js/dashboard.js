@@ -16,9 +16,7 @@ let createCard = (event) => {
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
-    console.log("DOM LOADED")
     let token = localStorage.getItem('TEQ_ACCESS_TOKEN');
-    console.log(token);
     if (!token) {
         window.location.href = "/log-in";
     }
@@ -27,9 +25,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 document.addEventListener('DOMContentLoaded', async () => {
     let userId = localStorage.getItem('TEQ_CURRENT_USER_ID');
     let data = await fetch('/dashboard/cities/' + `${userId}`)
-    console.log(data)
     let { events, attEv, hEvents } = await data.json();
-    console.log(events)
     let cEvents = document.getElementById('eventsInYourCity');
     let hostEvents = document.getElementById('host');
     let attendEvents = document.getElementById('attend');
