@@ -6,7 +6,13 @@
   "scripts": {
     "start": "per-env",
     "start:development": "nodemon -r dotenv/config ./bin/www",
-    "start:production": "node ./bin/www"
+    "start:production": "node ./bin/www",
+    "dev": "react-scripts start",
+    "start": "serve -s build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "",
@@ -35,6 +41,7 @@
     "pg": "^8.0.0",
     "pug": "^2.0.4",
     "sequelize": "^5.21.6",
+    "serve": "^11.3.2",
     "serve-favicon": "^2.5.0"
   }
 }
